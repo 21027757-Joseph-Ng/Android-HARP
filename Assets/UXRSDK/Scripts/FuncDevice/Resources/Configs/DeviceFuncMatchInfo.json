@@ -1,0 +1,23 @@
+﻿[
+  {
+    "Id": 1,
+    "FuncName": "CameraFunc",
+    "DeviceModels": "Rokid cyclopsX|Rokid RG-crown",
+    "MinOSVersion": "",
+    "UseCamera": 1
+  },
+  {
+    "Id": 2,
+    "FuncName": "HandTracking",
+    "DeviceModels": "Rokid cyclopsX|Rokid RG-crown",
+    "MinOSVersion": "2.7.0-20220506-401101",
+    "UseCamera": 1
+  },
+  {
+    "Id": 3,
+    "FuncName": "VoiceRecog",
+    "DeviceModels": "Rokid cyclopsX|Rokid RG-crown",
+    "MinOSVersion": "",
+    "UseCamera": 0
+  }
+]

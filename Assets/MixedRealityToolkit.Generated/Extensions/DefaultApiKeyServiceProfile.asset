@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7359cd9424d783478ce2e0622216cf7, type: 3}
+  m_Name: DefaultApiKeyServiceProfile
+  m_EditorClassIdentifier: 
+  isCustomProfile: 1
+  graphTodoListApi: https://graph.microsoft.com/v1.0/users/ltaholo@ltaholotestoutlook.onmicrosoft.com/drive/root:/checklists.zip:?select=content.downloadUrl
+  graphTodoListKey: Lw68Q~uQnbY6hn5t646JxfgxAkELI4Z2a~vyqcqx
+  graphTodoListClientId: fc474e3f-1a2c-4358-9ef3-e8df4ea90376
+  customVisionPredictionApi: https://cvname-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/154ca1ab-9511-484e-9494-4814b1ad9ba5/detect/iterations/Iteration4/image
+  customVisionPredictionKey: d153c77467604e0c93200b155ca9a1af
+  facePredictionApi: https://westus.api.cognitive.microsoft.com/face/v1.0/
+  facePredictionKey: a88b05c661d94177ac71d7b39d19b343

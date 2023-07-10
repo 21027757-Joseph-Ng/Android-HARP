@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: 6ccbb0f34b23e70439f8656fffacf464
+  - enabled: 1
+    path: Assets/UXRSamples/Scenes/uxr00-MainScene.unity
+    guid: cf456bb48710aad41a8f5a2753401d8c
+  - enabled: 1
+    path: Assets/UXRSamples/Scenes/uxr01-HeadTracking.unity
+    guid: 4342d2a26dba345f08a6a2beee09a31b
+  - enabled: 1
+    path: Assets/UXRSamples/Scenes/uxr02-VoiceRecog.unity
+    guid: 8d694036700e54da987fc23136da526c
+  - enabled: 1
+    path: Assets/UXRSamples/Scenes/uxr03-HandGesture.unity
+    guid: 77689f66e3cb341eb925b9b426280c39
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/UXRSamples/Scenes/uxr04-CameraPreview.unity
+    guid: fae2101dcf0a74a2ea86609de3b8010b
+  - enabled: 1
+    path: Assets/CheckList/CheckList.unity
+    guid: d355505f2c946d643931d88832a0a445
+  - enabled: 1
+    path: Assets/From Joseph/Settings/Settings.unity
+    guid: 237534ec987224540afbb93d16a6a66b
+  - enabled: 1
+    path: Assets/From Joseph/Measure/Measure.unity
+    guid: 4f5bbabbe609cd94298ebe62ef294f84
+  - enabled: 1
+    path: Assets/From Joseph/Shared/Shared.unity
+    guid: f63b0debcf48d3c45b1fc3f8687e0bed
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7e4a6ba3eacbde64ea47454b27786bcd, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 869dcdf76d4f5ad4e9ace8291590d4ca, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0d82497d150ec514587509f4790ee142, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2ebdfe58df1300341bdb23912b54731a, type: 2}
