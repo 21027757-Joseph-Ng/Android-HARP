@@ -5,6 +5,7 @@ public class ClickedEventUtil : MonoBehaviour
 {
     //public int Sceneindex;
 
+    public SettingBool boolData;
     private bool m_Enter = false;
 
     public void OnPointerEnter()
@@ -27,6 +28,7 @@ public class ClickedEventUtil : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
             {
             //public void ToToggle()
+            boolData.settingON = !boolData.settingON;
             GameObject utils = GameObject.FindWithTag("Util");
                 for (int i = 0; i < utils.transform.childCount; i++)
                 {

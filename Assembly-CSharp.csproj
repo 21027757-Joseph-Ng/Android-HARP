@@ -59,6 +59,7 @@
     <Compile Include="Assets\UXRSDK\Scripts\UXR3DofController.cs" />
     <Compile Include="Assets\CheckList\Scripts\ChecklistObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\FaceDetector\FaceTracking.cs" />
     <Compile Include="Assets\HandGestures.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\CameraPointer2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\UXRSamples\Script\Utils\MySceneBack.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\Crosshair3DMy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\From Joseph\Script\LoadingShared.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Voice\VoiceCommandLogic.cs" />
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\ApiKeyService.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Assets\UXRSDK\Scripts\Gesture\RKGesType.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\CameraPreviewScene\CameraPreviewAndSendGesData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\From Joseph\Script\ShareStart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\From Joseph\Script\ToggleUtilities.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Gesture\RKGestureEvent.cs" />
@@ -106,11 +109,13 @@
     <Compile Include="Assets\CheckList\Scripts\Checklist.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedEventUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\From Joseph\Script\FaceDetect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scrolling Demos\ScrollableListPopulator.cs" />
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\ApiKeyServiceProfile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Gesture\RKGesCamera.cs" />
+    <Compile Include="Assets\FaceDetector\FaceRequestor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\CheckList\Scripts\OpenCheckLists.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -141,13 +146,12 @@
     <Compile Include="Assets\UXRSDK\Scripts\FuncDevice\FuncDeviceCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedEventProfile.cs" />
+    <Compile Include="Assets\FaceDetector\FaceAnalysisObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
-    <Compile Include="Assets\FaceDetector\FaceTracking.cs" />
-    <Compile Include="Assets\FaceDetector\FaceAnalysisObject.cs" />
-    <Compile Include="Assets\FaceDetector\FaceRequestor.cs" />
-    <Compile Include="Assets\From Joseph\Script\ShareStart.cs" />
-    <Compile Include="Assets\From Joseph\Script\LoadingShared.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
+    <Compile Include="Assets\From Joseph\Script\SettingBool.cs" />
+    <Compile Include="Assets\From Joseph\Script\LoadUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

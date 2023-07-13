@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/From Joseph/Shared/Shared.unity
     guid: f63b0debcf48d3c45b1fc3f8687e0bed
+  - enabled: 1
+    path: Assets/FaceDetector/FaceDetector.unity
+    guid: 97a8946db1385fa4d99c2deb965b2706
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7e4a6ba3eacbde64ea47454b27786bcd, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 869dcdf76d4f5ad4e9ace8291590d4ca, type: 2}
