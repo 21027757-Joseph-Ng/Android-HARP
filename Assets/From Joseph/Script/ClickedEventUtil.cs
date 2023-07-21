@@ -27,13 +27,7 @@ public class ClickedEventUtil : MonoBehaviour
         //{
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
             {
-            //public void ToToggle()
-            boolData.settingON = !boolData.settingON;
-            GameObject utils = GameObject.FindWithTag("Util");
-                for (int i = 0; i < utils.transform.childCount; i++)
-                {
-                    utils.transform.GetChild(i).gameObject.SetActive(!utils.transform.GetChild(i).gameObject.activeSelf);
-                }
+            ToToggle();        
         }
         //}
     }
@@ -41,5 +35,15 @@ public class ClickedEventUtil : MonoBehaviour
     private void Open()//for voice command
     {
         VoiceCommandLogic.Instance.RemoveInstructZH("打开");
+    }
+
+    public void ToToggle()
+    {
+        boolData.settingON = !boolData.settingON;
+        GameObject utils = GameObject.FindWithTag("Util");
+        for (int i = 0; i < utils.transform.childCount; i++)
+        {
+            utils.transform.GetChild(i).gameObject.SetActive(!utils.transform.GetChild(i).gameObject.activeSelf);
+        }
     }
 }

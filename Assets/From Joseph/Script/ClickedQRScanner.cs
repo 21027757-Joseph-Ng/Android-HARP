@@ -56,7 +56,7 @@ public class ClickedQRScanner : MonoBehaviour
         VoiceCommandLogic.Instance.RemoveInstructZH("打开");
     }
 
-    private void LaunchQRScanner()
+    public void LaunchQRScanner()
     {
         Debug.Log("2");
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");

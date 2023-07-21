@@ -23,7 +23,7 @@ public class UnityPlayerActivityProxy extends com.rokid.uxrplugin.activity.UXRUn
 	    startActivity(webIntent);
 	}
 	else if (requestCode == 2){
-	    Uri webpage = Uri.parse("ms-voip-video://");
+	    Uri webpage = Uri.parse("youtube.com");
 	    Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
 	    webIntent.setPackage("com.android.chrome");
 	    startActivity(webIntent);
@@ -41,6 +41,13 @@ public class UnityPlayerActivityProxy extends com.rokid.uxrplugin.activity.UXRUn
             // Send the photoBytes back to Unity
             UnityPlayer.UnitySendMessage("DetectButton", "DetectFace", Base64.encodeToString(photoBytes, Base64.DEFAULT));
     
+	}
+
+	else if (requestCode == 4){
+	    Uri webpage = Uri.parse("https://onedrive.live.com/");
+	    Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+	    webIntent.setPackage("com.android.chrome");
+	    startActivity(webIntent);
 	}
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b32c83ecc3536409eddcb277250862, type: 3}
   m_Name: NewBoolData
   m_EditorClassIdentifier: 
-  settingON: 0
+  settingON: 1

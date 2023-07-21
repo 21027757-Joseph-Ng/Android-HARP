@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class VoiceCheckList : MonoBehaviour
 {
+    public GameObject checklistMenu;
+    public GameObject toDoList;
+
     private void Awake()
     {
         RegisterCommand();
@@ -18,14 +21,16 @@ public class VoiceCheckList : MonoBehaviour
     private void RegisterCommand()
     {
         Debug.LogError(this.gameObject.name);
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main menu", true, true, true, this.gameObject.name, "ColorRes", "main");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main", true, true, true, this.gameObject.name, "ColorRes", "main");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "list", true, true, true, this.gameObject.name, "ColorRes", "checklist");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "thermatic", true, true, true, this.gameObject.name, "ColorRes", "thermatic");
     }
 
     private void UnRegisterCommand()
     {
         VoiceCommandLogic.Instance.RemoveInstruct(1, "main");
         VoiceCommandLogic.Instance.RemoveInstruct(1, "checklist");
+        VoiceCommandLogic.Instance.RemoveInstruct(1, "thermatic");
     }
 
 
@@ -42,8 +47,12 @@ public class VoiceCheckList : MonoBehaviour
         else if (string.Equals("checklist", msg))
         {
             Debug.LogError("Checklist");
-            //SceneManager.LoadScene("CheckList");
-            //load up checklist
+            checklistMenu.SetActive(!checklistMenu.activeSelf);
+        }
+        else if (string.Equals("thermatic", msg))
+        {
+            Debug.LogError("Thermatic");
+            toDoList.SetActive(!toDoList.activeSelf);
         }
     }
 

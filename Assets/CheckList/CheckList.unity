@@ -2142,6 +2142,7 @@ GameObject:
   - component: {fileID: 420557429}
   - component: {fileID: 420557428}
   - component: {fileID: 420557433}
+  - component: {fileID: 420557434}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2264,6 +2265,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9c599bb8dcccf448a8788e94533644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &420557434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420557426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bc455580a777d4abfffa76959edce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checklistMenu: {fileID: 402788098}
+  toDoList: {fileID: 2095930530691936059}
 --- !u!1 &498924731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8233201677653826235, guid: 5d7b2e7a9c16c463ea24fce40270c3e9, type: 3}
@@ -9783,11 +9798,6 @@ Transform:
   m_Father: {fileID: 945441613}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1831434647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1168089314322340, guid: f28960de61e02824ba41a07b824b1523, type: 3}
-  m_PrefabInstance: {fileID: 1020237932}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1831434648 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 130192532092767339, guid: 5d7b2e7a9c16c463ea24fce40270c3e9, type: 3}
@@ -11935,8 +11945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!114 &560994811626807078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13306,8 +13314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!4 &1393825342377932499
 Transform:
   m_ObjectHideFlags: 0
@@ -16199,8 +16205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!114 &2760221681641331156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16534,8 +16538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!1 &2961710820072116704
 GameObject:
   m_ObjectHideFlags: 0
@@ -17912,8 +17914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!114 &3622284013256690341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20209,8 +20209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!114 &4477842232990577788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22067,8 +22065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!33 &5400726988862949282
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22612,8 +22608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!1 &5779509964081611671
 GameObject:
   m_ObjectHideFlags: 0
@@ -24268,8 +24262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!33 &6618710388421138016
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24406,8 +24398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!1 &6691234372809260015
 GameObject:
   m_ObjectHideFlags: 0
@@ -25175,9 +25165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8347facd12d020a4ba0f68bac33fd854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingObject: {fileID: 2095930530691936059}
-  toFollow: {fileID: 1831434647}
-  clickedOn: 0
 --- !u!114 &7135456315804339540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27717,8 +27704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b08335812a6c840ac91cd66079f829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 3c55769e893c4f4c8c51b7fa69bee2b9, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 635a27f13b7b26b4483bc1283d04803e, type: 2}
 --- !u!224 &8255486025600470878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28296,8 +28281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4552d8654c9c71647a4f39881537452f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 4811337687038030849}
-  filename: checkList
 --- !u!114 &8579349395992213909
 MonoBehaviour:
   m_ObjectHideFlags: 0
