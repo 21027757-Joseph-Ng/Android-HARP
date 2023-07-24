@@ -9,7 +9,12 @@ public class LoadUtilities : MonoBehaviour
     public SettingBool boolData;
     public GameObject[] children;
 
-    private void OnEnable()
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
     {
         SetChildrenActive(boolData.settingON);
     }
@@ -17,7 +22,7 @@ public class LoadUtilities : MonoBehaviour
     private void SetChildrenActive(bool active)
     {
         foreach (GameObject child in children)
-        {
+        { 
             child.SetActive(active);
         }
     }

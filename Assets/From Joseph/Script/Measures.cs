@@ -21,7 +21,7 @@ public class Measures : MonoBehaviour
     private Renderer m_TargetRender;
     private Camera m_MainCamera;
     private RKGestureEvent m_Arg;
-    float initialScaleZ = 1.0f, defaultDist = 22.0f;
+    float initialScaleZ = 1.0f, defaultDist = 0f;
     bool isinitialScaleZgot = false;
     long lastGesTimeStamp = 0;
     private Transform sphere1;

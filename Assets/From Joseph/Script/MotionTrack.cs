@@ -1,35 +1,44 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MotionTrack : MonoBehaviour
 {
+    // Multiplier to adjust virtual movement speed
+    public float virtualMovementSpeed = 1.0f;
 
-    float speed = 10.0f;
+    // Complementary filter coefficients
+    public float alpha = 0.5f;
+    public float beta = 0.5f;
 
-    void Update()
+    private Vector3 gravityVector;
+    private Quaternion baseRotation;
+
+    private void Start()
     {
-        Vector3 dir = Vector3.zero;
+        // Get the initial gravity vector from the accelerometer
+        gravityVector = Input.acceleration.normalized;
+        // Set the base rotation as the current rotation of the GameObject
+        baseRotation = transform.rotation;
+    }
 
-        // we assume that device is held parallel to the ground
-        // and Home button is in the right hand
+    private void Update()
+    {
+        // Get the current accelerometer data
+        Vector3 currentAccelData = Input.acceleration.normalized;
 
-        // remap device acceleration axis to game coordinates:
-        //  1) XY plane of the device is mapped onto XZ plane
-        //  2) rotated 90 degrees around Y axis
-        dir.x = -Input.acceleration.y;
-        dir.z = Input.acceleration.x;
+        // Calculate the new gravity vector using the complementary filter
+        gravityVector = alpha * gravityVector + beta * currentAccelData;
 
-        // clamp acceleration vector to unit sphere
-        if (dir.sqrMagnitude > 1)
-            dir.Normalize();
+        // Calculate the rotation difference between the base rotation and the current gravity vector
+        Quaternion rotationDiff = Quaternion.FromToRotation(baseRotation * Vector3.up, gravityVector);
 
-        // Make it move 10 meters per second instead of 10 meters per frame...
-        dir *= Time.deltaTime;
+        // Apply the rotation difference to the GameObject
+        transform.rotation = rotationDiff * baseRotation;
 
-        // Move object
-        transform.Translate(dir * speed);
-        Debug.Log("position: " + transform.position);
-        Debug.Log("acceleration: " + Input.acceleration);
+        // Move the GameObject in the virtual space based on the accelerometer data
+        Vector3 virtualMoveDirection = new Vector3(currentAccelData.x, 0, currentAccelData.y);
+        Vector3 virtualMoveAmount = virtualMoveDirection * virtualMovementSpeed * Time.deltaTime;
+        transform.Translate(virtualMoveAmount, Space.World);
+        Debug.Log(transform.position);
     }
 }
 

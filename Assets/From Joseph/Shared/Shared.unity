@@ -258,18 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLines: 20
---- !u!114 &331671461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331671459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fc4eeeda4e5ef4fb888bd7ca71a202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1180108392
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,17 +477,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d66e10dc0c01cf448ee8aa4a9c572b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1953750441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953750439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fc4eeeda4e5ef4fb888bd7ca71a202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
