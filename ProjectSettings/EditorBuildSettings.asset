@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UXRSamples/Scenes/uxr04-CameraPreview.unity
     guid: fae2101dcf0a74a2ea86609de3b8010b
-  - enabled: 1
-    path: Assets/CheckList/CheckList.unity
-    guid: d355505f2c946d643931d88832a0a445
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/From Joseph/Settings/Settings.unity
     guid: 237534ec987224540afbb93d16a6a66b
@@ -41,6 +41,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FaceDetector/FaceDetector.unity
     guid: 97a8946db1385fa4d99c2deb965b2706
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/CheckList/CheckList.unity
+    guid: 6fbb23dd156caf64eb367bbe317b21cd
+  - enabled: 1
+    path: Assets/DLAB.unity
+    guid: 206609fcb0a8f4e4b996770add51679a
+  - enabled: 0
+    path: Assets/From Joseph/QRScanner/QRScanner.unity
+    guid: 7b5a382a52e5264478e07b273f9419cc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7e4a6ba3eacbde64ea47454b27786bcd, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 869dcdf76d4f5ad4e9ace8291590d4ca, type: 2}

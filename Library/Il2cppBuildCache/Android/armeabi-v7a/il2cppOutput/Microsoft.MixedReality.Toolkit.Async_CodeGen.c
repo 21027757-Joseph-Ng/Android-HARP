@@ -301,12 +301,12 @@ static const Il2CppRGCTXDefinition s_rgctxValues[27] =
 {
 	{ (Il2CppRGCTXDataType)2, 1826 },
 	{ (Il2CppRGCTXDataType)3, 106 },
-	{ (Il2CppRGCTXDataType)2, 6640 },
+	{ (Il2CppRGCTXDataType)2, 6641 },
 	{ (Il2CppRGCTXDataType)3, 35515 },
 	{ (Il2CppRGCTXDataType)3, 107 },
 	{ (Il2CppRGCTXDataType)2, 1827 },
 	{ (Il2CppRGCTXDataType)3, 110 },
-	{ (Il2CppRGCTXDataType)2, 6641 },
+	{ (Il2CppRGCTXDataType)2, 6642 },
 	{ (Il2CppRGCTXDataType)3, 35516 },
 	{ (Il2CppRGCTXDataType)3, 111 },
 	{ (Il2CppRGCTXDataType)3, 35517 },
@@ -325,7 +325,7 @@ static const Il2CppRGCTXDefinition s_rgctxValues[27] =
 	{ (Il2CppRGCTXDataType)2, 2504 },
 	{ (Il2CppRGCTXDataType)3, 5609 },
 	{ (Il2CppRGCTXDataType)3, 5610 },
-	{ (Il2CppRGCTXDataType)3, 47418 },
+	{ (Il2CppRGCTXDataType)3, 47419 },
 };
 extern const CustomAttributesCacheGenerator g_Microsoft_MixedReality_Toolkit_Async_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Async_CodeGenModule;

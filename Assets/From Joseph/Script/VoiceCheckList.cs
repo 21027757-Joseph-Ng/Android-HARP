@@ -21,8 +21,8 @@ public class VoiceCheckList : MonoBehaviour
     private void RegisterCommand()
     {
         Debug.LogError(this.gameObject.name);
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main", true, true, true, this.gameObject.name, "ColorRes", "main");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "list", true, true, true, this.gameObject.name, "ColorRes", "checklist");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main menu", true, true, true, this.gameObject.name, "ColorRes", "main");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "checklist", true, true, true, this.gameObject.name, "ColorRes", "checklist");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "thermatic", true, true, true, this.gameObject.name, "ColorRes", "thermatic");
     }
 

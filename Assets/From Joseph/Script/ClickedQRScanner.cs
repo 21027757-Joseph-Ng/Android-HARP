@@ -7,9 +7,10 @@ public class ClickedQRScanner : MonoBehaviour
 {
     //public int Sceneindex;
 
-    private bool m_Enter = false;
-    private const int REQUEST_CODE_SCAN_INFO = 1;
+    private bool m_Enter = true;
 
+    private bool isActive = false;
+    private const int REQUEST_CODE_SCAN_INFO = 1;
     private AndroidJavaObject currentActivity;
 
     public void OnPointerEnter()
@@ -32,23 +33,13 @@ public class ClickedQRScanner : MonoBehaviour
 
     private void Update()
     {
-       // if (test1.Equals("test1success"))
-       // {
-            //onActivityResult(qrCodeActivity);// or qrcodeactivity
-          //  test1 = "";
-        //}
-
         if (!m_Enter) return;
-        //if (Application.platform == RuntimePlatform.Android)
-        //{
-
-        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
-        {
-            Debug.Log("1");
-            LaunchQRScanner();
-        }
-        //onActivityResult(qrCodeActivity);// or qrcodeactivity
-        //}
+ 
+            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("1");
+                LaunchQRScanner();
+            }
     }
 
     private void Open()//for voice command
@@ -58,6 +49,7 @@ public class ClickedQRScanner : MonoBehaviour
 
     public void LaunchQRScanner()
     {
+        isActive = true;
         Debug.Log("2");
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
         AndroidJavaObject comp = new AndroidJavaObject("android.content.ComponentName",

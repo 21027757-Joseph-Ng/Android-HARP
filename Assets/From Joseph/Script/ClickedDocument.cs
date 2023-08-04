@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Microsoft.MixedReality.Toolkit;
@@ -38,14 +39,14 @@ public class ClickedDocument : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
             {
             //wait for a few second
-            StartCoroutine(OpenFolderWithDelay());
+            OpenFolder();
         }
         //}
     }
 
     public IEnumerator OpenFolderWithDelay()
     {
-        yield return new WaitForSeconds(1f); // Wait for 2 seconds before calling OpenFolder()
+        yield return new WaitForSeconds(1f); // Wait for 1 seconds before calling OpenFolder()
         //OpenFolder();
         OpenCloud();
     }

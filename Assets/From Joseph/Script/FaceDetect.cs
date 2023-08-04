@@ -61,13 +61,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public async Task DetectFacesFromImage(byte[] imageBytes)
         {
             var client = new HttpClient();
-            key = "a88b05c661d94177ac71d7b39d19b343";//joseph hard code       try to include the android platform for apikeyservice
+            key = "0821b718984a46b6b444718cdf6b2ac0";//joseph hard code       try to include the android platform for apikeyservice
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
             Debug.Log("Key: " + key);//debug
 
             string url = $"{baseEndpoint}detect";
 
-            url = "https://westus.api.cognitive.microsoft.com/face/v1.0/detect";//joseph hard code
+            url = "https://harpface.cognitiveservices.azure.com/face/v1.0/detect";//joseph hard code
 
             Debug.Log("baseEndpoint: " + baseEndpoint);//debug
 
@@ -138,7 +138,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 //client.BaseAddress = new Uri("Base Address/URL Address");
                 string url = $"{baseEndpoint}identify";
 
-                url = "https://westus.api.cognitive.microsoft.com/face/v1.0/identify";//joseph hard code
+                url = "https://harpface.cognitiveservices.azure.com/face/v1.0/identify";//joseph hard code
                 
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
                 // serialize your json using newtonsoft json serializer then add it to the StringContent
@@ -165,7 +165,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             string getGroupEndpoint = $"{baseEndpoint}persongroups/{personGroupId}/persons/{personId}?";
             
-            getGroupEndpoint = "https://westus.api.cognitive.microsoft.com/face/v1.0/persongroups/123456/persons/" + personId + "?";//joseph hard code
+            getGroupEndpoint = "https://harpface.cognitiveservices.azure.com/face/v1.0/persongroups/123456/persons/" + personId + "?";//joseph hard code
 
             using (var client = new HttpClient())
             {

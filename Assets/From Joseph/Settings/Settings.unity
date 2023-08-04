@@ -942,6 +942,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 908485784614504773, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34faab99063139846b1d55addb4e96c4, type: 2}
     - target: {fileID: 1333129552543361702, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
@@ -1892,7 +1896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d97df0b646fa94da56499d828c1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Shared
 --- !u!4 &1663176049
 Transform:
   m_ObjectHideFlags: 0
@@ -2314,6 +2317,10 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Microsoft.MixedReality.OpenXR.BasicSample.AnchorsSample, Microsoft.MixedReality.OpenXR.BasicSample
       objectReference: {fileID: 0}
+    - target: {fileID: 8551537435281601873, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34faab99063139846b1d55addb4e96c4, type: 2}
     - target: {fileID: 8609693118658432602, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: iconQuadTexture
       value: 

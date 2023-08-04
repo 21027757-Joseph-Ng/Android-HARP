@@ -29,16 +29,17 @@ public class VoiceMainMenu : MonoBehaviour
 
     private void RegisterCommand()
     {
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "list", true, true, true, this.gameObject.name, "ColorRes", "checklist");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "document", true, true, true, this.gameObject.name, "ColorRes", "document");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "scanner", true, true, true, this.gameObject.name, "ColorRes", "qr");//not sure how will the string present for pronouncing QR
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "checklist", true, false, true, this.gameObject.name, "ColorRes", "checklist");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "document viewer", true, true, true, this.gameObject.name, "ColorRes", "document");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "Q R scanner", true, true, true, this.gameObject.name, "ColorRes", "qr");//not sure how will the string present for pronouncing QR
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "object recognition", true, true, true, this.gameObject.name, "ColorRes", "recognition");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "face", true, true, true, this.gameObject.name, "ColorRes", "face");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "face detector", true, true, true, this.gameObject.name, "ColorRes", "face");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "measure", true, true, true, this.gameObject.name, "ColorRes", "measure");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "L T A verse", true, true, true, this.gameObject.name, "ColorRes", "lta");//same
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "indoor navigation", true, true, true, this.gameObject.name, "ColorRes", "navigation");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "dynamic 3 6 5", true, true, true, this.gameObject.name, "ColorRes", "dynamic");//same for number
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "setting", true, true, true, this.gameObject.name, "ColorRes", "settings");
+        //VoiceCommandLogic.Instance.AddInstrucList(1, "select", "item", "select x item", 1, 2, this.gameObject.name, "ColorRes");//testing 
     }
 
     private void UnRegisterCommand()
