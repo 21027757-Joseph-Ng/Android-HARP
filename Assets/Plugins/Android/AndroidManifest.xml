@@ -5,7 +5,6 @@
     package="com.unity3d.player"
     xmlns:tools="http://schemas.android.com/tools">
 
-	<!-- Add your permissions here -->
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -13,9 +12,8 @@
 
 	<application android:requestLegacyExternalStorage="true">
 
-		<!-- Add other application configurations and metadata here -->
-
-		<meta-data android:name="com.rokid.uxr.application.mode" android:value="3d"/>
+		
+    <meta-data android:name="com.rokid.uxr.application.mode" android:value="3d"/>
 			
 		<activity
             android:name=".UnityPlayerActivityProxy"

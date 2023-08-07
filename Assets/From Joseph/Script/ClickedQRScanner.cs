@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using Microsoft.MixedReality.Toolkit;
 using System;
@@ -7,9 +8,8 @@ public class ClickedQRScanner : MonoBehaviour
 {
     //public int Sceneindex;
 
-    private bool m_Enter = true;
+    private bool m_Enter = false;
 
-    private bool isActive = false;
     private const int REQUEST_CODE_SCAN_INFO = 1;
     private AndroidJavaObject currentActivity;
 
@@ -25,21 +25,15 @@ public class ClickedQRScanner : MonoBehaviour
         VoiceCommandLogic.Instance.RemoveInstructZH("打开");
     }
 
-    private void Start()
-    {
-        AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
-    }
-
     private void Update()
     {
         if (!m_Enter) return;
- 
-            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("1");
-                LaunchQRScanner();
-            }
+
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("1");
+            LaunchQRScanner();
+        }
     }
 
     private void Open()//for voice command
@@ -47,17 +41,19 @@ public class ClickedQRScanner : MonoBehaviour
         VoiceCommandLogic.Instance.RemoveInstructZH("打开");
     }
 
+    private void Start()
+    {
+        AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
+    }
+
     public void LaunchQRScanner()
     {
-        isActive = true;
-        Debug.Log("2");
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
         AndroidJavaObject comp = new AndroidJavaObject("android.content.ComponentName",
             "com.rokid.glass.scan2",
             "com.rokid.glass.scan2.activity.QrCodeActivity");
         intent.Call<AndroidJavaObject>("setComponent", comp);
-        Debug.Log("3");
         currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
-        Debug.Log("4");
     }
 }

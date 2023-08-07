@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/From Joseph/Measure/Measure.unity
     guid: 4f5bbabbe609cd94298ebe62ef294f84
   - enabled: 1
-    path: Assets/From Joseph/Shared/Shared.unity
-    guid: f63b0debcf48d3c45b1fc3f8687e0bed
-  - enabled: 1
     path: Assets/FaceDetector/FaceDetector.unity
     guid: 97a8946db1385fa4d99c2deb965b2706
   - enabled: 0
@@ -51,8 +48,14 @@ EditorBuildSettings:
     path: Assets/DLAB.unity
     guid: 206609fcb0a8f4e4b996770add51679a
   - enabled: 0
-    path: Assets/From Joseph/QRScanner/QRScanner.unity
-    guid: 7b5a382a52e5264478e07b273f9419cc
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/From Joseph/Shared/Shared.unity
+    guid: f63b0debcf48d3c45b1fc3f8687e0bed
+  - enabled: 1
+    path: Assets/ObjectDetect/ObjectDetect.unity
+    guid: b0869c277f5582d4c847146b2709512e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7e4a6ba3eacbde64ea47454b27786bcd, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 869dcdf76d4f5ad4e9ace8291590d4ca, type: 2}

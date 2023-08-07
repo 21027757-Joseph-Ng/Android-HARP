@@ -9,12 +9,13 @@ public class VoiceMainMenu : MonoBehaviour
     public GameObject qrButton;
 
     private ClickedDocument clickedDocument;
-    private ClickedQRScanner clickedQRScanner;
+    private AndroidJavaObject currentActivity;
 
     private void Start()
     {
         clickedDocument = documentButton.GetComponent<ClickedDocument>();
-        clickedQRScanner = qrButton.GetComponent<ClickedQRScanner>();
+        AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
     }
 
     private void Awake()
@@ -39,7 +40,6 @@ public class VoiceMainMenu : MonoBehaviour
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "indoor navigation", true, true, true, this.gameObject.name, "ColorRes", "navigation");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "dynamic 3 6 5", true, true, true, this.gameObject.name, "ColorRes", "dynamic");//same for number
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "setting", true, true, true, this.gameObject.name, "ColorRes", "settings");
-        //VoiceCommandLogic.Instance.AddInstrucList(1, "select", "item", "select x item", 1, 2, this.gameObject.name, "ColorRes");//testing 
     }
 
     private void UnRegisterCommand()
@@ -74,7 +74,12 @@ public class VoiceMainMenu : MonoBehaviour
         else if (string.Equals("qr", msg))
         {
             Debug.LogError("QRScanner");
-            clickedQRScanner.LaunchQRScanner();
+            AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
+            AndroidJavaObject comp = new AndroidJavaObject("android.content.ComponentName",
+                "com.rokid.glass.scan2",
+                "com.rokid.glass.scan2.activity.QrCodeActivity");
+            intent.Call<AndroidJavaObject>("setComponent", comp);
+            currentActivity.Call("startActivityForResult", intent, 1);
         }
         else if (string.Equals("recognition", msg))
         {

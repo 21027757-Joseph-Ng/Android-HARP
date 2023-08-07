@@ -10,7 +10,6 @@ public class ClickedGoogleDrive : MonoBehaviour
 
     private bool m_Enter = false;
 
-    private Button button;
     private const int REQUEST_CODE_SCAN_INFO = 5;
     private AndroidJavaObject currentActivity;
 
@@ -55,11 +54,5 @@ public class ClickedGoogleDrive : MonoBehaviour
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
 
         currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
-    }
-
-    private void OnClick()
-    {
-        OpenCloud();
-        Debug.Log("Button clicked!");
     }
 }

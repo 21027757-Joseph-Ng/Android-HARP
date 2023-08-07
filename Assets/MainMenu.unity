@@ -12328,6 +12328,7 @@ GameObject:
   - component: {fileID: 3015033264401651778}
   - component: {fileID: 3015033266029567679}
   - component: {fileID: 4892378985784358042}
+  - component: {fileID: 3015033266029567652}
   m_Layer: 0
   m_Name: Object Recognition
   m_TagString: Untagged
@@ -12335,6 +12336,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3015033266029567652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015033266029567651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc50968143889c94fbe9acd4ac0049b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: ObjectDetect
 --- !u!65 &3015033266029567679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15962,8 +15976,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7915729865406766086}
-  - component: {fileID: 7915729867001125627}
   - component: {fileID: 569958637173469406}
+  - component: {fileID: 7915729867001125609}
   - component: {fileID: 7915729867001125608}
   m_Layer: 0
   m_Name: QR Scanner
@@ -15984,7 +15998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e275c07b924014287d5514a7331f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7915729867001125627
+--- !u!65 &7915729867001125609
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

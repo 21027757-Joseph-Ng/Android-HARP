@@ -121,27 +121,27 @@ public class ScrollMainMenu : MonoBehaviour//attach to button collection
         switch (index)
         {
             case 0://checklist
-                SceneManager.LoadScene("CheckList");
                 Debug.Log("button1");
+                SceneManager.LoadScene("CheckList");
                 break;
             case 1://document viewer
-                document.GetComponent<ClickedGoogleDrive>().OpenCloud();
                 Debug.Log("button2");
+                document.GetComponent<ClickedGoogleDrive>().OpenCloud();
                 break;
             case 2://qr scanner
                 qr.GetComponent<ClickedQRScanner>().LaunchQRScanner();
-                Debug.Log("button3");
                 break;
             case 3://object recognition
                 Debug.Log("button4");
+                SceneManager.LoadScene("ObjectDetect");
                 break;
             case 4://face detector
-                SceneManager.LoadScene("FaceDetector");
                 Debug.Log("button5");
+                SceneManager.LoadScene("FaceDetector");
                 break;
             case 5://measure
-                SceneManager.LoadScene("Measure");
                 Debug.Log("button6");
+                SceneManager.LoadScene("Measure");
                 break;
             case 6://ltaverse
                 Debug.Log("button7");
@@ -154,8 +154,8 @@ public class ScrollMainMenu : MonoBehaviour//attach to button collection
                 Debug.Log("button9");
                 break;
             case 9://setting
-                SceneManager.LoadScene("Settings");
                 Debug.Log("button10");
+                SceneManager.LoadScene("Settings");
                 break;
         }
     }

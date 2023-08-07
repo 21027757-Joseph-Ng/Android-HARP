@@ -13,7 +13,7 @@ public class UnityPlayerActivityProxy extends com.rokid.uxrplugin.activity.UXRUn
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	if (requestCode == 1){//qr scanner
+	if (requestCode == 1 && data != null){//qr scanner
             super.onActivityResult(requestCode, resultCode, data);   
 	    String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             UnityPlayer.UnitySendMessage("QR Scanner", "OnActivityResult", result);
@@ -23,7 +23,8 @@ public class UnityPlayerActivityProxy extends com.rokid.uxrplugin.activity.UXRUn
 	    webIntent.setPackage("com.android.chrome");
 	    startActivity(webIntent);
 	}
-	else if (requestCode == 2){//useless
+
+	else if (requestCode == 2){//useless, for dynamics 365
 	    Intent intent = new Intent();
 	    ComponentName comp = new ComponentName("com.rokid.glass.scan2", "com.rokid.glass.scan2.activity.QrCodeActivity");
 	    intent.setComponent(comp);

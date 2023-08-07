@@ -67,6 +67,7 @@
     <Compile Include="Assets\CheckList\Scripts\ObjectController.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\MainScene.cs" />
     <Compile Include="Assets\RayCaster.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollCheckList.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\VoiceScene\VoiceScene.cs" />
     <Compile Include="Assets\UXRSamples\CrossHair\Scripts\Crosshair3D.cs" />
     <Compile Include="Assets\From Joseph\Script\Measures.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\CheckList\Scripts\Graph.cs" />
     <Compile Include="Assets\CheckList\Scripts\Checklist.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollSetting.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedEventUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\From Joseph\Script\FaceDetect.cs" />
@@ -158,8 +160,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\From Joseph\Script\ScrollSetting.cs" />
-    <Compile Include="Assets\From Joseph\Script\ScrollCheckList.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\Tracker.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\CustomVision.cs" />
+    <Compile Include="Assets\ObjectDetect\DetectObject.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\ClearLabels.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\CustomVisionObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -187,6 +192,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\MixedRealityToolkit.Generated\link.xml" />
+    <None Include="Assets\ObjectDetect\Shaders\GridShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\MRTK\Shaders\MixedRealityStandard.shader" />
     <None Include="Assets\MRTK\Shaders\MixedRealityTextMeshPro.shader" />

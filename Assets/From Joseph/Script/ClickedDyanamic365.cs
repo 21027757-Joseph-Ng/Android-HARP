@@ -52,8 +52,8 @@ public class ClickedDyanamic365 : MonoBehaviour
     private void LaunchDynamic365()
     {
         Debug.Log("2");
-        AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
+        //AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
 
-        currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
+        //currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
     }
 }
