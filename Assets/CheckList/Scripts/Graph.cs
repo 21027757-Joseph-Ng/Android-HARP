@@ -64,14 +64,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         /// </summary>
         async Task Auth()
         {
-            var clientId = ApiKeyService.graphTodoListClientId;
-            var secret = ApiKeyService.graphTodoListKey;
+            var clientId = "359fbb04-c9d7-4c87-b81d-6f7369e67225";
+            var secret = "H7H8Q~v6d5EY3R4npwAIOI_jTRcGHkeWfH9Q2bON";
             //var clientId = "fc474e3f-1a2c-4358-9ef3-e8df4ea90376";
             //var secret = "Lw68Q~uQnbY6hn5t646JxfgxAkELI4Z2a~vyqcqx";
             var grant_type = "client_credentials";
             var redirect_uri = "https://localhost";
             var scope = "https://graph.microsoft.com/.default";
-            var requestUrl = "https://login.microsoftonline.com/32355549-a4c1-4d91-9b75-d3b39523f335/oauth2/v2.0/token";
+            var requestUrl = "https://login.microsoftonline.com/0dc974ed-3f76-4f60-b245-02aa22f02dae/oauth2/v2.0/token";
 
             var httpClient = new HttpClient();
             var dict = new Dictionary<string, string>

@@ -161,7 +161,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
             var httpContent = new StringContent(contents, Encoding.UTF8, "text/plain");
 
-            var url = $"https://graph.microsoft.com/v1.0/users/ltaholo@ltaholotestoutlook.onmicrosoft.com/drive/root:/saved_checklists/{newFileName}.txt:/content";
+            var url = $"https://graph.microsoft.com/v1.0/users/be25760b-bf7d-4501-8df2-8e1c673734fa/drive/root:/saved_checklists/{newFileName}.txt:/content";
             //UnityEngine.Debug.Log(url);
             var client = new HttpClient();
             client.BaseAddress = new Uri(url);

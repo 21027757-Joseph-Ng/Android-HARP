@@ -66,6 +66,7 @@
     <Compile Include="Assets\From Joseph\Script\ClickedQRScanner.cs" />
     <Compile Include="Assets\CheckList\Scripts\ObjectController.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\MainScene.cs" />
+    <Compile Include="Assets\ObjectDetect\DetectObject.cs" />
     <Compile Include="Assets\RayCaster.cs" />
     <Compile Include="Assets\From Joseph\Script\ScrollCheckList.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\VoiceScene\VoiceScene.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\UXRSamples\Script\Utils\DeviceAndFunctionCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\ClearLabels.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\DebugTool.cs" />
     <Compile Include="Assets\From Joseph\Measure\MeasureScript.cs" />
     <Compile Include="Assets\SceneLoader.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\From Joseph\Script\ClickedGoogleDrive.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Singleton\Singleton.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\CustomVision.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\FuncDevice\Resources\Configs\DeviceFuncMatchInfo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
@@ -123,13 +126,13 @@
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\ApiKeyServiceProfile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Gesture\RKGesCamera.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\Tracker.cs" />
     <Compile Include="Assets\FaceDetector\FaceRequestor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\CheckList\Scripts\OpenCheckLists.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Native\NativeInterface.cs" />
     <Compile Include="Assets\CheckList\Scripts\TodoClose.cs" />
-    <Compile Include="Assets\UploadToDrive.cs" />
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\IApiKeyService.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\OpenCheckList.cs" />
@@ -140,6 +143,7 @@
     <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\ObjectDetect\Scripts\CustomVisionObject.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\GetSystemInfo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceDocument.cs" />
@@ -160,11 +164,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\ObjectDetect\Scripts\Tracker.cs" />
-    <Compile Include="Assets\ObjectDetect\Scripts\CustomVision.cs" />
-    <Compile Include="Assets\ObjectDetect\DetectObject.cs" />
-    <Compile Include="Assets\ObjectDetect\Scripts\ClearLabels.cs" />
-    <Compile Include="Assets\ObjectDetect\Scripts\CustomVisionObject.cs" />
+    <Compile Include="Assets\CheckList\Scripts\UploadToDrive.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
