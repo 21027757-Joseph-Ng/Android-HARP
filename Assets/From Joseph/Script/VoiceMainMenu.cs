@@ -8,12 +8,14 @@ public class VoiceMainMenu : MonoBehaviour
     public GameObject documentButton;
     public GameObject qrButton;
 
-    private ClickedDocument clickedDocument;
+    private ClickedQRScanner clickedQRScanner;
+    private ClickedGoogleDrive clickedDocument;
     private AndroidJavaObject currentActivity;
 
     private void Start()
     {
-        clickedDocument = documentButton.GetComponent<ClickedDocument>();
+        clickedQRScanner = qrButton.GetComponent<ClickedQRScanner>();
+        clickedDocument = documentButton.GetComponent<ClickedGoogleDrive>();
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
     }
@@ -69,17 +71,12 @@ public class VoiceMainMenu : MonoBehaviour
         else if (string.Equals("document", msg))
         {
             Debug.LogError("Document Viewer");
-            StartCoroutine(clickedDocument.OpenFolderWithDelay());
+            clickedDocument.OpenCloud();
         }
         else if (string.Equals("qr", msg))
         {
             Debug.LogError("QRScanner");
-            AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
-            AndroidJavaObject comp = new AndroidJavaObject("android.content.ComponentName",
-                "com.rokid.glass.scan2",
-                "com.rokid.glass.scan2.activity.QrCodeActivity");
-            intent.Call<AndroidJavaObject>("setComponent", comp);
-            currentActivity.Call("startActivityForResult", intent, 1);
+            clickedQRScanner.LaunchQRScanner();
         }
         else if (string.Equals("recognition", msg))
         {
@@ -99,7 +96,7 @@ public class VoiceMainMenu : MonoBehaviour
         else if (string.Equals("lta", msg))
         {
             Debug.LogError("LTA Verse");
-            SceneManager.LoadScene("User");
+            SceneManager.LoadScene("DLAB");
         }
         else if (string.Equals("navigation", msg))
         {

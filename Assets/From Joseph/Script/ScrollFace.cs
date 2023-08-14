@@ -25,7 +25,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))//downward
+            if (Input.GetKeyDown(KeyCode.RightArrow))//upward
             {
                 Debug.Log("downward");
                 if (buttonIndex == -1)
@@ -49,7 +49,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 }
             }
 
-            else if (Input.GetKeyDown(KeyCode.RightArrow))//upward
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))//downward
             {
                 Debug.Log("upward");
                 if (buttonIndex == 0)
@@ -107,7 +107,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     SceneManager.LoadScene("MainMenu");
                     Debug.Log("button1");
                     break;
-                case 1://one drive
+                case 1://detect face
                     faceDetect.GetComponent<ClickedDetect>().CapturePhoto();
                     Debug.Log("button2");
                     break;

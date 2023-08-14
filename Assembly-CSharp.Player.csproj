@@ -117,6 +117,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\CheckList\Scripts\Graph.cs" />
     <Compile Include="Assets\CheckList\Scripts\Checklist.cs" />
+    <Compile Include="Assets\CheckList\Scripts\UploadToDrive.cs" />
     <Compile Include="Assets\From Joseph\Script\ScrollSetting.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedEventUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
@@ -164,7 +165,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\CheckList\Scripts\UploadToDrive.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollObject.cs" />
+    <Compile Include="Assets\From Joseph\Script\VoiceObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

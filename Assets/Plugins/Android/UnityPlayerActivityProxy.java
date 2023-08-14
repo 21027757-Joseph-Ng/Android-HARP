@@ -24,14 +24,20 @@ public class UnityPlayerActivityProxy extends com.rokid.uxrplugin.activity.UXRUn
 	    startActivity(webIntent);
 	}
 
-	else if (requestCode == 2){//useless, for dynamics 365
-	    Intent intent = new Intent();
-	    ComponentName comp = new ComponentName("com.rokid.glass.scan2", "com.rokid.glass.scan2.activity.QrCodeActivity");
-	    intent.setComponent(comp);
-	    startActivityForResult(intent, 1);
+	else if (requestCode == 2 && data != null){//object detector
+	    Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");
+
+            // Convert the Bitmap to a byte array
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            photo.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] photoBytes = stream.toByteArray();
+
+            // Send the photoBytes back to Unity
+            UnityPlayer.UnitySendMessage("DetectButton", "DetectObjects", Base64.encodeToString(photoBytes, Base64.DEFAULT));
 	}
 
-	else if (requestCode == 3){//face detector
+	else if (requestCode == 3 && data != null){//face detector
 	    Bundle extras = data.getExtras();
             Bitmap photo = (Bitmap) extras.get("data");
 

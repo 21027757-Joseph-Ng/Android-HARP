@@ -26,7 +26,7 @@ public class VoiceSetting : MonoBehaviour
 
     private void RegisterCommand()
     {
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main", true, true, true, this.gameObject.name, "ColorRes", "main menu");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "main menu", true, true, true, this.gameObject.name, "ColorRes", "main menu");
         VoiceCommandLogic.Instance.AddInstrucEntity(1, "utility", true, true, true, this.gameObject.name, "ColorRes", "utility");
     }
 

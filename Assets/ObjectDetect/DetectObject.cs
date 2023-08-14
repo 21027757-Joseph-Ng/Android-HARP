@@ -15,13 +15,14 @@ using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.IO;
-namespace Microsoft.MixedReality.OpenXR.BasicSample
-{
+using Microsoft.MixedReality.OpenXR.BasicSample;
+
+
 public class DetectObject : MonoBehaviour
 {
     private bool m_Enter = false;
 
-    private const int REQUEST_CODE_CAPTURE_PHOTO = 3;
+    private const int REQUEST_CODE_CAPTURE_PHOTO = 2;
 
     private AndroidJavaObject currentActivity;
     private AndroidJavaObject intentObject;
@@ -37,13 +38,19 @@ public class DetectObject : MonoBehaviour
         RenderTexture renderTexture;
         private float elapseTime;
         public int FPS = 30;
+        public GameObject objectParent;
 
         private bool startRecord = true;
 
         public GameObject images;
 
-    [SerializeField]
-    private GameObject objectPrefab;
+        private static float probabilityThreshold = 0.6f;
+        Camera MRTKCam;
+        RaycastHit rayCastHit;
+        private static int _meshPhysicsLayer = 0;
+
+        [SerializeField]
+        private GameObject objectPrefab;
 
     public void OnPointerEnter()
     {
@@ -87,24 +94,15 @@ public class DetectObject : MonoBehaviour
             //        }
             //    }
             //}
-
-            if (!m_Enter) return;
-        //if (Application.platform == RuntimePlatform.Android)
-        //{
-        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
-        {
-                //webCam.Stop(); // To Test
-                //videoObject.SetActive(false);
-                //startRecord = false;
-
-                Debug.Log("2");
-            CapturePhoto();
-            Debug.Log("1");
-        }
         //}
     }
-    //try to startactivityresult in unity and onactivityresult from java file
-    public void CapturePhoto()
+        //try to startactivityresult in unity and onactivityresult from java file
+        private void OnEnable()
+        {
+            MRTKCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        }
+
+        public void CapturePhoto()
     {
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
@@ -115,30 +113,97 @@ public class DetectObject : MonoBehaviour
         currentActivity.Call("startActivityForResult", intentObject, REQUEST_CODE_CAPTURE_PHOTO);
     }
 
-    public async void DetectFace(string photoData)
+    public async void DetectObjects(string photoData)
     {
         byte[] photoBytes = System.Convert.FromBase64String(photoData);
         Debug.Log("3");
         Debug.Log(photoBytes);
         CustomVision faceDetect = gameObject.AddComponent<CustomVision>();
         Debug.Log("Taken photo!");
-        await faceDetect.MakePredictionRequest(photoBytes);
+        var jsonResponse = await faceDetect.MakePredictionRequest(photoBytes);
         Debug.Log("4");
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(photoBytes);
         images.GetComponent<RawImage>().texture = texture;
         Debug.Log("5");
+
+        CreateBoundingBox(jsonResponse);
     }
 
-    public async void CreateBoundingBox(IdentifiedPerson_RootObject identifiedPerson)
+    public async void CreateBoundingBox(CustomVisionAnalysisObject jsonContent)
     {
-        Debug.Log("starting bounding box");
-        if (!images.activeSelf) images.SetActive(true);
-        var label = objectPrefab;
-        label.GetComponentInChildren<TextMeshPro>().text = identifiedPerson.name;
+            Debug.Log("starting bounding box");
+            Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            var heightFactor = Screen.height / Screen.width;
+            var topCorner = cameraTransform.position + cameraTransform.forward -
+                            cameraTransform.right / 2f +
+                            cameraTransform.up * heightFactor / 2f;
 
-        Debug.Log("done with label");
-    }
+
+
+            var sortedPredictions = jsonContent.predictions.OrderBy(p => p.probability).ToList().FindAll(e => e.probability > probabilityThreshold);
+
+            foreach (Prediction prediction in sortedPredictions)
+            {
+                Debug.Log(prediction.tagName + ", " + prediction.probability);
+                CreatePoint(prediction, heightFactor, topCorner, cameraTransform);
+
+            }
+            if (!images.activeSelf) images.SetActive(true);
+            Debug.Log("Starting prediction");
+        }
+
+        private void CreatePoint(Prediction p, int heightFactor, Vector3 topCorner, Transform cameraTransform)
+        {
+            var center = GetCenter(p);
+            Debug.Log("Center of point: " + center);
+            var recognizedPos = topCorner + cameraTransform.right * center.x -
+                                cameraTransform.up * center.y * heightFactor;
+            Debug.Log("Recognised Pos:  " + recognizedPos);
+
+            //Ray ray = MRTKCam.ScreenPointToRay(recognizedPos);
+            //Debug.Log(Physics.Raycast(ray.origin, ray.direction, out rayCastHit, Mathf.Infinity, GetSpatialMeshMask()));
+
+            //Debug.Log(rayCastHit.point);
+
+            var label = objectPrefab;
+            label.GetComponentInChildren<TextMeshPro>().text = p.tagName;
+            //var label = Instantiate(objectPrefab);
+            //label.GetComponentInChildren<ToolTip>().ToolTipText = p.tagName;
+            //label.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            //label.transform.localPosition = new Vector3(recognizedPos.x, rayCastHit.point.y, rayCastHit.point.z);
+            //label.transform.parent = objectParent.transform;
+        }
+
+        private static int GetSpatialMeshMask()
+        {
+            if (_meshPhysicsLayer == 0)
+            {
+                var spatialMappingConfig =
+                  CoreServices.SpatialAwarenessSystem.ConfigurationProfile as
+                    MixedRealitySpatialAwarenessSystemProfile;
+                if (spatialMappingConfig != null)
+                {
+                    foreach (var config in spatialMappingConfig.ObserverConfigurations)
+                    {
+                        var observerProfile = config.ObserverProfile
+                            as MixedRealitySpatialAwarenessMeshObserverProfile;
+                        if (observerProfile != null)
+                        {
+                            _meshPhysicsLayer |= (1 << observerProfile.MeshPhysicsLayer);
+                        }
+                    }
+                }
+            }
+
+            return _meshPhysicsLayer;
+        }
+
+        private Vector2 GetCenter(Prediction p)
+        {
+            return new Vector2((float)(p.boundingBox.left + (0.5 * p.boundingBox.width)),
+                (float)(p.boundingBox.top + (0.5 * p.boundingBox.height)));
+        }
 
         //private void InitVideo(int width, int height, int fps)
         //{
@@ -214,4 +279,4 @@ public class DetectObject : MonoBehaviour
             Debug.Log("1");
         }
     }
-}
+

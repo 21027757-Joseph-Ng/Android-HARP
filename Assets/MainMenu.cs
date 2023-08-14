@@ -41,9 +41,6 @@ public class MainMenu : MonoBehaviour
         VoiceCommandLogic.Instance.AddInstrucEntityZH("头控追踪", "tou kong zhui zong", true, true, true, this.gameObject.name, "OpenHeadTracking", "头控追踪");
         VoiceCommandLogic.Instance.AddInstrucEntityZH("语音识别", "yu yin shi bie", true, true, true, this.gameObject.name, "OpenVoiceRecog", "语音识别");
         VoiceCommandLogic.Instance.AddInstrucEntityZH("手势识别", "shou shi shi bie", true, true, true, this.gameObject.name, "OpenGestureRecog", "手势识别");
-
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "check list", this.gameObject.name , "OpenHeadTracking", "check list");
-
     }
 
     private void UnRegisterCommand()
@@ -51,8 +48,6 @@ public class MainMenu : MonoBehaviour
         VoiceCommandLogic.Instance.RemoveInstructZH("头控追踪");
         VoiceCommandLogic.Instance.RemoveInstructZH("语音识别");
         VoiceCommandLogic.Instance.RemoveInstructZH("手势识别");
-
-        VoiceCommandLogic.Instance.RemoveInstruct(1, "check list");
     }
 
     private void Open()

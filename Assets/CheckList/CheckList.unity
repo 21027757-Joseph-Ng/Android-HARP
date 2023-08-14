@@ -1638,7 +1638,7 @@ PrefabInstance:
     - target: {fileID: 4686116223119621205, guid: 94a19295db177ad409b629aaf7d5a6b0, type: 3}
       propertyPath: cameraMethods
       value: 
-      objectReference: {fileID: 420557433}
+      objectReference: {fileID: 0}
     - target: {fileID: 4686116223119621206, guid: 94a19295db177ad409b629aaf7d5a6b0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4223,6 +4223,7 @@ GameObject:
   - component: {fileID: 420557430}
   - component: {fileID: 420557429}
   - component: {fileID: 420557428}
+  - component: {fileID: 420557434}
   - component: {fileID: 420557433}
   m_Layer: 0
   m_Name: Main Camera
@@ -4346,6 +4347,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9c599bb8dcccf448a8788e94533644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &420557434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420557426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bc455580a777d4abfffa76959edce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checklistMenu: {fileID: 402788098}
+  toDoList: {fileID: 2095930530691936059}
 --- !u!1 &498924731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8233201677653826235, guid: 5d7b2e7a9c16c463ea24fce40270c3e9, type: 3}
@@ -24334,7 +24349,7 @@ MonoBehaviour:
   OnMomentumStarted:
     m_PersistentCalls:
       m_Calls: []
-  cameraMethods: {fileID: 420557433}
+  cameraMethods: {fileID: 0}
   scrollContainer: {fileID: 5187126630181623113}
   clippingObject: {fileID: 1441965857757127118}
   clipBox: {fileID: 161685284410968671}

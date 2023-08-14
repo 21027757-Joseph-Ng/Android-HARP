@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Microsoft.MixedReality.OpenXR.BasicSample;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
-{
     public class VoiceFaceDetector : MonoBehaviour
     {
         public GameObject detectButton;
@@ -28,7 +27,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void RegisterCommand()
         {
-            VoiceCommandLogic.Instance.AddInstrucEntity(1, "main", true, true, true, this.gameObject.name, "ColorRes", "main menu");
+            VoiceCommandLogic.Instance.AddInstrucEntity(1, "main menu", true, true, true, this.gameObject.name, "ColorRes", "main menu");
             VoiceCommandLogic.Instance.AddInstrucEntity(1, "detect", true, true, true, this.gameObject.name, "ColorRes", "detect");
         }
 
@@ -55,4 +54,3 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
     }
-}
