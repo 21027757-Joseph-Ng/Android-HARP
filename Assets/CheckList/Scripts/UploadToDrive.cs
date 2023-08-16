@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using System.IO;
 
 public class UploadToDrive : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class UploadToDrive : MonoBehaviour
         ACCESS_TOKEN = accessToken;
         // Debug.Log(accessToken);
         // await GetURL(accessToken);
+        SaveLocally();
         SendNewJson();
     }
 
@@ -127,6 +129,26 @@ public class UploadToDrive : MonoBehaviour
         Debug.Log("Starting Save Clicked");
         await StartAsync();
 
+    }
+
+    private void SaveLocally()
+    {
+        string content = checkListContents;//the file or the string that structured in json format, save it locally
+        string fileName = GetNewFileName();
+        string directoryPath = "/sdcard/Documents";
+
+        if (!Directory.Exists(directoryPath))
+        {
+            Debug.Log("File path don't exist");
+        }
+
+        else
+        {
+            string filePath = Path.Combine(directoryPath, fileName + ".txt");
+
+            File.WriteAllText(filePath, content);
+            Debug.Log("saved locally");
+        }
     }
 
 

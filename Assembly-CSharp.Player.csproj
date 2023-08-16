@@ -69,6 +69,7 @@
     <Compile Include="Assets\ObjectDetect\DetectObject.cs" />
     <Compile Include="Assets\RayCaster.cs" />
     <Compile Include="Assets\From Joseph\Script\ScrollCheckList.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollObject.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\VoiceScene\VoiceScene.cs" />
     <Compile Include="Assets\UXRSamples\CrossHair\Scripts\Crosshair3D.cs" />
     <Compile Include="Assets\From Joseph\Script\Measures.cs" />
@@ -164,9 +165,9 @@
     <Compile Include="Assets\FaceDetector\FaceAnalysisObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\From Joseph\Script\ScrollObject.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceObject.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
+    <Compile Include="Assets\HandGestureMainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
