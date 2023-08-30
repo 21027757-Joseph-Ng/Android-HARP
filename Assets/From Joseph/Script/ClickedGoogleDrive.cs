@@ -55,4 +55,9 @@ public class ClickedGoogleDrive : MonoBehaviour
 
         currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
     }
+
+    public void Activate()
+    {
+        OpenCloud();
+    }
 }

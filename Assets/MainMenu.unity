@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2460533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.225, y: 0.00000000372529, z: 1}
+  m_LocalPosition: {x: 0.22500001, y: 0.0000000037252903, z: 1}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1819792502}
@@ -3839,6 +3839,7 @@ GameObject:
   - component: {fileID: 845300478}
   - component: {fileID: 845300472}
   - component: {fileID: 845300470}
+  - component: {fileID: 845300471}
   m_Layer: 0
   m_Name: LTAVerse
   m_TagString: Untagged
@@ -3859,6 +3860,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: DLAB
+--- !u!114 &845300471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845300469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a675c89d01994db98e649035c2232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &845300472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4852,6 +4865,7 @@ GameObject:
   - component: {fileID: 1007993308}
   - component: {fileID: 1007993302}
   - component: {fileID: 1007993300}
+  - component: {fileID: 1007993301}
   m_Layer: 0
   m_Name: Measure
   m_TagString: Untagged
@@ -4891,6 +4905,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Measure
+--- !u!114 &1007993301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007993298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e68538b55003d54ca044214697e851f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1007993302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6782,6 +6808,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2204069621426241315, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}
   m_PrefabInstance: {fileID: 958820754}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1510772358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510772357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163fdccd9b71f074aaddfaa29a1d95d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1510772360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2204069623020599746, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}
@@ -6943,6 +6981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentButton: {fileID: 131490876278523357}
   qrButton: {fileID: 7915729867001125607}
+  buttonCollections: {fileID: 8724819114020190640}
 --- !u!1 &1535431895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8535,6 +8574,7 @@ GameObject:
   - component: {fileID: 1903953127}
   - component: {fileID: 1903953126}
   - component: {fileID: 1903953130}
+  - component: {fileID: 1903953131}
   m_Layer: 0
   m_Name: Checklist
   m_TagString: Untagged
@@ -8657,6 +8697,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1903953131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903953124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5401db0eafd57c245a63754ca459932f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908752305
 GameObject:
   m_ObjectHideFlags: 0
@@ -12733,6 +12785,7 @@ GameObject:
   - component: {fileID: 3015033266029567679}
   - component: {fileID: 4892378985784358042}
   - component: {fileID: 3015033266029567652}
+  - component: {fileID: 3015033266029567653}
   m_Layer: 0
   m_Name: Object Recognition
   m_TagString: Untagged
@@ -12753,6 +12806,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: ObjectDetect
+--- !u!114 &3015033266029567653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015033266029567651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cbf4bb930c5594c986f671329eee01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &3015033266029567679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13403,10 +13468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeList:
-  - Name: ButtonFive
+  - Name: Checklist
     Offset: {x: 0, y: 0}
     Radius: 0
-    Transform: {fileID: 0}
+    Transform: {fileID: 1903953125}
     Colliders: []
   - Name: ButtonTwo
     Offset: {x: 0, y: 0}
@@ -13438,10 +13503,10 @@ MonoBehaviour:
     Radius: 0
     Transform: {fileID: 845300479}
     Colliders: []
-  - Name: Spatial Anchors (1)
+  - Name: Indoor Navigation
     Offset: {x: 0, y: 0}
     Radius: 0
-    Transform: {fileID: 0}
+    Transform: {fileID: 2460534}
     Colliders: []
   - Name: ButtonOne
     Offset: {x: 0, y: 0}
@@ -14566,6 +14631,7 @@ GameObject:
   - component: {fileID: 5684875916526103266}
   - component: {fileID: 2654318397861953735}
   - component: {fileID: 5684875916526103295}
+  - component: {fileID: 5684875916526103296}
   m_Layer: 0
   m_Name: Face Detector
   m_TagString: Untagged
@@ -14586,6 +14652,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: FaceDetector
+--- !u!114 &5684875916526103296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684875916526103294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c3a1280ce8d9d49bbcb05fb72e1fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &5684875916895413601
 MeshRenderer:
   m_ObjectHideFlags: 0

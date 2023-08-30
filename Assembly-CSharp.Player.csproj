@@ -137,6 +137,7 @@
     <Compile Include="Assets\CheckList\Scripts\TodoClose.cs" />
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\IApiKeyService.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\HandGestureMainMenu.cs" />
     <Compile Include="Assets\OpenCheckList.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceMainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -167,7 +168,12 @@
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceObject.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\HandGestureMainMenu.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedMeasure.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedSetting.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedObjectRecognition.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedFaceDetector.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedLTAVerse.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedCheckList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

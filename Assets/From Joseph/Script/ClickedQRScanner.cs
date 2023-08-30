@@ -56,4 +56,9 @@ public class ClickedQRScanner : MonoBehaviour
         intent.Call<AndroidJavaObject>("setComponent", comp);
         currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
     }
+
+    public void Activate()
+    {
+        LaunchQRScanner();
+    }
 }
