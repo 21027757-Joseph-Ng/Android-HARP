@@ -76,10 +76,12 @@
     <Compile Include="Assets\UXRSamples\Script\Utils\MySceneBack.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\Crosshair3DMy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedLTAVerse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Voice\VoiceCommandLogic.cs" />
     <Compile Include="Assets\From Joseph\Script\MotionTrack.cs" />
     <Compile Include="Assets\MixedRealityToolkit.Generated\Extensions\ApiKeyService.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedMeasure.cs" />
     <Compile Include="Assets\UXRSamples\Script\Scenes\GestureScene\RKGesSampleInteraction.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\DeviceAndFunctionCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Assets\From Joseph\Script\VoiceMainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scrolling Demos\ScrollablePagination.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedObjectRecognition.cs" />
     <Compile Include="Assets\CheckList\Scripts\ChecklistManager.cs" />
     <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -149,6 +152,8 @@
     <Compile Include="Assets\ObjectDetect\Scripts\CustomVisionObject.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\GetSystemInfo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedSetting.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedCheckList.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceDocument.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\ShowFps.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\Singleton\MonoSingleton.cs" />
@@ -160,6 +165,7 @@
     <Compile Include="Assets\UXRSDK\Scripts\UXRController.cs" />
     <Compile Include="Assets\UXRSDK\Scripts\FuncDevice\FuncDeviceCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\From Joseph\Script\ClickedFaceDetector.cs" />
     <Compile Include="Assets\From Joseph\Script\ScrollFace.cs" />
     <Compile Include="Assets\From Joseph\Script\LoadUtilities.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedEventProfile.cs" />
@@ -168,12 +174,7 @@
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceObject.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedMeasure.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedSetting.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedObjectRecognition.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedFaceDetector.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedLTAVerse.cs" />
-    <Compile Include="Assets\From Joseph\Script\ClickedCheckList.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollCheckList2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

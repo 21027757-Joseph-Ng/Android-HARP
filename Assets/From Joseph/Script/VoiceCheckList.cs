@@ -24,7 +24,7 @@ public class VoiceCheckList : MonoBehaviour
     {
         //for (int i = 0; i < CountList(); i++)//7 to 5 + CountList() + 1
         //{
-            //list.Add(gridObjectCollection.transform.GetChild(i).gameObject);
+        //list.Add(gridObjectCollection.transform.GetChild(i).gameObject);
         //}
 
         //checklistMenu = GameObject.Find("GameObject").transform.GetChild(1).gameObject;// allchecklistmanager1
@@ -53,7 +53,7 @@ public class VoiceCheckList : MonoBehaviour
         //dynamic
         //checklist
 
-        for (int i = 1; i < checklist.childCount; i++)
+        for (int i = 1; i < checklist.childCount + 1; i++)
         {
             VoiceCommandLogic.Instance.AddInstrucEntity(1, checklist.transform.GetChild(i).Find("IconAndText").GetChild(0).GetComponent<TextMeshPro>().text, true, true, true, this.gameObject.name, "ColorRes", checklist.transform.GetChild(i).Find("IconAndText").GetChild(0).GetComponent<TextMeshPro>().text);
         }
@@ -144,6 +144,17 @@ public class VoiceCheckList : MonoBehaviour
         Debug.Log(checklist);
 
         Debug.Log(6);
+
+        //checklist
+        int count = 0;
+        for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
+        {
+            if (todoListMenu.transform.GetChild(i - 1).gameObject.activeSelf)
+            {
+                count++;
+            }
+        }
+
         //custom
         if (string.Equals("main menu", msg))
         {
@@ -154,58 +165,78 @@ public class VoiceCheckList : MonoBehaviour
         {
             Debug.LogError("Checklist");
             checklistMenu.SetActive(!checklistMenu.activeSelf);
+            //if (checklistMenu.activeSelf && count == 0)//if checklist menu is on and no todolist is on
+            //{
+            //RegisterCheckListScroll();
+            //}
+            //else if (count != 0)
+            //{
+            //UnregisterCheckListScroll();
+            //}
         }
-        else if (string.Equals("thermatic", msg))
+        else if (string.Equals("thermatic", msg) && !todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is closed, open it
         {
             Debug.LogError("Thermatic");
-            toDoList.SetActive(!toDoList.activeSelf);
+            todoListMenu.transform.GetChild(0).gameObject.SetActive(!todoListMenu.transform.GetChild(0).gameObject.activeSelf);
+
+            Debug.Log("TodoList open");
+            gridObjectCollection = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
+            Debug.Log("gridobjectcollection: " + gridObjectCollection);
+            RegisterTodoScroll();
+            RegisterTodoList();
+            RegisterSave();
+            UnregisterCheckListScroll();
+            save = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(3).GetChild(1).gameObject;//update save game object
+            scrollPaginationButtons = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(1).gameObject;//update scroll button
+        }
+        else if (string.Equals("thermatic", msg) && !todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is opened, close it
+        {
+            Debug.Log("TodoList close");
+            gridObjectCollection = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
+            todoListMenu.transform.GetChild(0).gameObject.SetActive(false);
+
+            UnregisterTodoScroll();
+            UnregisterTodoList();
+            UnregisterSave();
+            RegisterCheckListScroll();
         }
 
 
         //dynamic
-        //checklist
-        int count = 0;
-        for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
-        { 
-            if (todoListMenu.transform.GetChild(i - 1).gameObject.activeSelf)
-            {
-                count++;
-            }
-        }
 
         //on and off todolist, when a todolist is on, cannot say other todolist to open or close, when no todolist is on, can say it 
         Debug.Log(1);
         //checklist
-            for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
+        for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
+        {
+            Debug.Log("TodoList child text: " + checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text);
+            if (todoListMenu.transform.GetChild(i - 1).gameObject.activeSelf && string.Equals(checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text, msg) && count == 1)//if the voice command said todolist is active
             {
-                Debug.Log("TodoList child text: " + checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text);
-                if (todoListMenu.transform.GetChild(i-1).gameObject.activeSelf && string.Equals(checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text, msg) && count == 1)//if the voice command said todolist is active
-                {
-                    Debug.Log("TodoList close");
-                    gridObjectCollection = todoListMenu.transform.GetChild(i - 1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
-                    todoListMenu.transform.GetChild(i-1).gameObject.SetActive(false);//close it if open
-                    //deregister the scroll and todolist checkbox, save button register the scroll in checklist
-                    UnregisterTodoScroll();
-                    UnregisterTodoList();
-                    UnregisterSave();
-                    RegisterCheckListScroll();
-                }
-                else if (!todoListMenu.transform.GetChild(i-1).gameObject.activeSelf && string.Equals(checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text, msg) && count == 0)//the todolist is not active, open it
-                {
-                    //register the todolist scroll and checkbox, save button, unregister the scroll in checklist
-                    Debug.Log("TodoList open");
-                    gridObjectCollection = todoListMenu.transform.GetChild(i-1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
-                    Debug.Log("gridobjectcollection: " + gridObjectCollection);
-                    RegisterTodoScroll();
-                    RegisterTodoList();
-                    RegisterSave();
-                    UnregisterCheckListScroll();
-                    save = todoListMenu.transform.GetChild(i-1).GetChild(1).GetChild(3).GetChild(1).gameObject;//update save game object
-                    scrollPaginationButtons = todoListMenu.transform.GetChild(i-1).GetChild(1).GetChild(1).gameObject;//update scroll button
-
-                    todoListMenu.transform.GetChild(i - 1).gameObject.SetActive(true);
-                }
+                Debug.Log("TodoList close");
+                gridObjectCollection = todoListMenu.transform.GetChild(i - 1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
+                todoListMenu.transform.GetChild(i - 1).gameObject.SetActive(false);//close it if open
+                                                                                   //deregister the scroll and todolist checkbox, save button register the scroll in checklist
+                UnregisterTodoScroll();
+                UnregisterTodoList();
+                UnregisterSave();
+                RegisterCheckListScroll();
             }
+            else if (!todoListMenu.transform.GetChild(i - 1).gameObject.activeSelf && string.Equals(checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text, msg) && count == 0)//the todolist is not active, open it
+            {
+                //register the todolist scroll and checkbox, save button, unregister the scroll in checklist
+                Debug.Log("TodoList open");
+                gridObjectCollection = todoListMenu.transform.GetChild(i - 1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;
+                Debug.Log("gridobjectcollection: " + gridObjectCollection);
+                RegisterTodoScroll();
+                RegisterTodoList();
+                RegisterSave();
+                UnregisterCheckListScroll();
+                save = todoListMenu.transform.GetChild(i - 1).GetChild(1).GetChild(3).GetChild(1).gameObject;//update save game object
+                scrollPaginationButtons = todoListMenu.transform.GetChild(i - 1).GetChild(1).GetChild(1).gameObject;//update scroll button
+
+                todoListMenu.transform.GetChild(i - 1).gameObject.SetActive(true);
+            }
+        }
 
         Debug.Log(2);
         Debug.Log(int.TryParse(msg, out int results));
@@ -215,7 +246,7 @@ public class VoiceCheckList : MonoBehaviour
             for (int i = 0; i < CountList(); i++)
             {
                 Debug.Log("toggle index: " + gridObjectCollection.transform.GetChild(i).GetComponent<ChecklistObject>().index);
-                Debug.Log("comparing: " + (int.Parse(msg ) - 1).ToString());
+                Debug.Log("comparing: " + (int.Parse(msg) - 1).ToString());
                 if (string.Equals(gridObjectCollection.transform.GetChild(i).GetComponent<ChecklistObject>().index.ToString(), (int.Parse(msg) - 1).ToString()))
                 {
                     gridObjectCollection.transform.GetChild(i).GetComponent<ChecklistObject>().setToggle();//toggle
@@ -245,17 +276,17 @@ public class VoiceCheckList : MonoBehaviour
         //up and down checklist
         //if (!isActive)
         //{
-            if (string.Equals("upchecklist", msg))
-            {
-                checklistUpDown.GetComponent<ScrollablePagination>().ScrollByTier(-1);
-                Debug.Log("upchecklist");
-            }
+        if (string.Equals("upchecklist", msg))
+        {
+            checklistUpDown.GetComponent<ScrollablePagination>().ScrollByTier(-1);
+            Debug.Log("upchecklist");
+        }
 
-            else if (string.Equals("downchecklist", msg))
-            {
-                checklistUpDown.GetComponent<ScrollablePagination>().ScrollByTier(1);
-                Debug.Log("downchecklist");
-            }
+        else if (string.Equals("downchecklist", msg))
+        {
+            checklistUpDown.GetComponent<ScrollablePagination>().ScrollByTier(1);
+            Debug.Log("downchecklist");
+        }
         //}
 
         Debug.Log(5);
@@ -275,25 +306,25 @@ public class VoiceCheckList : MonoBehaviour
             }
         }
 
-       
+
         //else if (string.Equals("up", msg))
         //{
-            //Debug.LogError("Up");
-            //scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(-1);
+        //Debug.LogError("Up");
+        //scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(-1);
         //}
         //else if (string.Equals("down", msg))
         //{
-            //Debug.LogError("Down");
-            //scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(1);
+        //Debug.LogError("Down");
+        //scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(1);
         //}
         //else if (string.Equals("save", msg))
         //{
-            //save.GetComponent<UploadToDrive>().startSave();
+        //save.GetComponent<UploadToDrive>().startSave();
         //}
         //else
         //{
-            //list[int.Parse(msg) - 1].GetComponent<ChecklistObject>().setToggle();
-            //list[int.Parse(msg) - 1].transform.GetChild(0).GetChild(2).GetComponent<ObjectController>().OnPointerClick();
+        //list[int.Parse(msg) - 1].GetComponent<ChecklistObject>().setToggle();
+        //list[int.Parse(msg) - 1].transform.GetChild(0).GetChild(2).GetComponent<ObjectController>().OnPointerClick();
         //}
     }
 

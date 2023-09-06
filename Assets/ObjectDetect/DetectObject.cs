@@ -29,28 +29,28 @@ public class DetectObject : MonoBehaviour
 
     public static DetectObject Instance;
 
-        string deviceName;
-        WebCamTexture webCam;
-        public RawImage videoPreview;
-        public GameObject videoObject;
-        public GameObject handGestureObject;
-        Texture2D sourceTex2D;
-        RenderTexture renderTexture;
-        private float elapseTime;
-        public int FPS = 30;
-        public GameObject objectParent;
+    string deviceName;
+    WebCamTexture webCam;
+    public RawImage videoPreview;
+    public GameObject videoObject;
+    public GameObject handGestureObject;
+    Texture2D sourceTex2D;
+    RenderTexture renderTexture;
+    private float elapseTime;
+    public int FPS = 30;
+    public GameObject objectParent;
 
-        private bool startRecord = true;
+    private bool startRecord = true;
 
-        public GameObject images;
+    public GameObject images;
 
-        private static float probabilityThreshold = 0.6f;
-        Camera MRTKCam;
-        RaycastHit rayCastHit;
-        private static int _meshPhysicsLayer = 0;
+    private static float probabilityThreshold = 0.6f;
+    Camera MRTKCam;
+    RaycastHit rayCastHit;
+    private static int _meshPhysicsLayer = 0;
 
-        [SerializeField]
-        private GameObject objectPrefab;
+    [SerializeField]
+    private GameObject objectPrefab;
 
     public void OnPointerEnter()
     {
@@ -64,45 +64,45 @@ public class DetectObject : MonoBehaviour
         VoiceCommandLogic.Instance.RemoveInstructZH("打开");
     }
 
-        private void Start()
-        {
-            //InitVideo(1280, 720, 30);
-            //ToggleGes("true");
-        }
+    private void Start()
+    {
+        //InitVideo(1280, 720, 30);
+        //ToggleGes("true");
+    }
 
-        private void Update()
+    private void Update()
     {
 
-            //if (startRecord)
-            //{
-            //    elapseTime += Time.deltaTime;
-            //    if (elapseTime > 1.0f / FPS)
-            //    {
-            //        elapseTime = 0;
-            //        sourceTex2D = TextureToTexture2D(webCam);
-            //        if (sourceTex2D == null)
-            //        {
-            //            Debug.Log("SourceTex2D is Null !!!");
-            //        }
-            //        else
-            //        {
-            //            Debug.Log("Enter Data to Buffer");
-            //            UXRGesCamera.Instance.EnterVideoFrameBuffer(new UXRGesCamera.VideoFrame()
-            //            {
-            //                frameData = sourceTex2D.GetRawTextureData()
-            //            });
-            //        }
-            //    }
-            //}
+        //if (startRecord)
+        //{
+        //    elapseTime += Time.deltaTime;
+        //    if (elapseTime > 1.0f / FPS)
+        //    {
+        //        elapseTime = 0;
+        //        sourceTex2D = TextureToTexture2D(webCam);
+        //        if (sourceTex2D == null)
+        //        {
+        //            Debug.Log("SourceTex2D is Null !!!");
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("Enter Data to Buffer");
+        //            UXRGesCamera.Instance.EnterVideoFrameBuffer(new UXRGesCamera.VideoFrame()
+        //            {
+        //                frameData = sourceTex2D.GetRawTextureData()
+        //            });
+        //        }
+        //    }
+        //}
         //}
     }
-        //try to startactivityresult in unity and onactivityresult from java file
-        private void OnEnable()
-        {
-            MRTKCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        }
+    //try to startactivityresult in unity and onactivityresult from java file
+    private void OnEnable()
+    {
+        MRTKCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
 
-        public void CapturePhoto()
+    public void CapturePhoto()
     {
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
@@ -132,151 +132,166 @@ public class DetectObject : MonoBehaviour
 
     public async void CreateBoundingBox(CustomVisionAnalysisObject jsonContent)
     {
-            Debug.Log("starting bounding box");
-            Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
-            var heightFactor = Screen.height / Screen.width;
-            var topCorner = cameraTransform.position + cameraTransform.forward -
-                            cameraTransform.right / 2f +
-                            cameraTransform.up * heightFactor / 2f;
+        Debug.Log("starting bounding box");
+        Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        var heightFactor = Screen.height / Screen.width;
+        var topCorner = cameraTransform.position + cameraTransform.forward -
+                        cameraTransform.right / 2f +
+                        cameraTransform.up * heightFactor / 2f;
 
 
 
-            var sortedPredictions = jsonContent.predictions.OrderBy(p => p.probability).ToList().FindAll(e => e.probability > probabilityThreshold);
+        var sortedPredictions = jsonContent.predictions.OrderBy(p => p.probability).ToList().FindAll(e => e.probability > probabilityThreshold);
 
+        Debug.Log("sortprediction: " + sortedPredictions);
+        if (sortedPredictions != null)
+        {
+            bool isAvailable = false;
             foreach (Prediction prediction in sortedPredictions)
             {
+                Debug.Log("predict: " + prediction);
                 Debug.Log(prediction.tagName + ", " + prediction.probability);
                 CreatePoint(prediction, heightFactor, topCorner, cameraTransform);
-
+                isAvailable = true;
             }
-            if (!images.activeSelf) images.SetActive(true);
+            if (isAvailable == false)
+            {
+                var label = objectPrefab;
+                label.GetComponentInChildren<TextMeshPro>().text = "Object failed to detect";
+                if (!images.activeSelf) images.SetActive(true);
+            }
+
             Debug.Log("Starting prediction");
         }
 
-        private void CreatePoint(Prediction p, int heightFactor, Vector3 topCorner, Transform cameraTransform)
+    }
+
+    private void CreatePoint(Prediction p, int heightFactor, Vector3 topCorner, Transform cameraTransform)
+    {
+        var center = GetCenter(p);
+        Debug.Log("Center of point: " + center);
+        var recognizedPos = topCorner + cameraTransform.right * center.x -
+                            cameraTransform.up * center.y * heightFactor;
+        Debug.Log("Recognised Pos:  " + recognizedPos);
+
+        //Ray ray = MRTKCam.ScreenPointToRay(recognizedPos);
+        //Debug.Log(Physics.Raycast(ray.origin, ray.direction, out rayCastHit, Mathf.Infinity, GetSpatialMeshMask()));
+
+        //Debug.Log(rayCastHit.point);
+
+        Debug.Log("tagname: " + p.tagName);
+        var label = objectPrefab;
+        label.GetComponentInChildren<TextMeshPro>().text = p.tagName;
+        if (!images.activeSelf) images.SetActive(true);
+        //var label = Instantiate(objectPrefab);
+        //label.GetComponentInChildren<ToolTip>().ToolTipText = p.tagName;
+        //label.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        //label.transform.localPosition = new Vector3(recognizedPos.x, rayCastHit.point.y, rayCastHit.point.z);
+        //label.transform.parent = objectParent.transform;
+    }
+
+    private static int GetSpatialMeshMask()
+    {
+        if (_meshPhysicsLayer == 0)
         {
-            var center = GetCenter(p);
-            Debug.Log("Center of point: " + center);
-            var recognizedPos = topCorner + cameraTransform.right * center.x -
-                                cameraTransform.up * center.y * heightFactor;
-            Debug.Log("Recognised Pos:  " + recognizedPos);
-
-            //Ray ray = MRTKCam.ScreenPointToRay(recognizedPos);
-            //Debug.Log(Physics.Raycast(ray.origin, ray.direction, out rayCastHit, Mathf.Infinity, GetSpatialMeshMask()));
-
-            //Debug.Log(rayCastHit.point);
-
-            var label = objectPrefab;
-            label.GetComponentInChildren<TextMeshPro>().text = p.tagName;
-            //var label = Instantiate(objectPrefab);
-            //label.GetComponentInChildren<ToolTip>().ToolTipText = p.tagName;
-            //label.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-            //label.transform.localPosition = new Vector3(recognizedPos.x, rayCastHit.point.y, rayCastHit.point.z);
-            //label.transform.parent = objectParent.transform;
-        }
-
-        private static int GetSpatialMeshMask()
-        {
-            if (_meshPhysicsLayer == 0)
+            var spatialMappingConfig =
+              CoreServices.SpatialAwarenessSystem.ConfigurationProfile as
+                MixedRealitySpatialAwarenessSystemProfile;
+            if (spatialMappingConfig != null)
             {
-                var spatialMappingConfig =
-                  CoreServices.SpatialAwarenessSystem.ConfigurationProfile as
-                    MixedRealitySpatialAwarenessSystemProfile;
-                if (spatialMappingConfig != null)
+                foreach (var config in spatialMappingConfig.ObserverConfigurations)
                 {
-                    foreach (var config in spatialMappingConfig.ObserverConfigurations)
+                    var observerProfile = config.ObserverProfile
+                        as MixedRealitySpatialAwarenessMeshObserverProfile;
+                    if (observerProfile != null)
                     {
-                        var observerProfile = config.ObserverProfile
-                            as MixedRealitySpatialAwarenessMeshObserverProfile;
-                        if (observerProfile != null)
-                        {
-                            _meshPhysicsLayer |= (1 << observerProfile.MeshPhysicsLayer);
-                        }
+                        _meshPhysicsLayer |= (1 << observerProfile.MeshPhysicsLayer);
                     }
                 }
             }
-
-            return _meshPhysicsLayer;
         }
 
-        private Vector2 GetCenter(Prediction p)
-        {
-            return new Vector2((float)(p.boundingBox.left + (0.5 * p.boundingBox.width)),
-                (float)(p.boundingBox.top + (0.5 * p.boundingBox.height)));
-        }
-
-        //private void InitVideo(int width, int height, int fps)
-        //{
-        //    Debug.Log("Init Video");
-        //    WebCamDevice[] devices = WebCamTexture.devices;
-        //    if (devices.Length < 1)
-        //    {
-        //        Debug.Log("设备上未找到摄像头,请检查设备");
-        //        return;
-        //    }
-        //    deviceName = devices[0].name;
-        //    webCam = new WebCamTexture(deviceName, width, height, fps);//设置宽、高和帧率   
-        //    RawImage preview = videoPreview;
-        //    preview.texture = webCam;
-        //    preview.color = Color.white;
-        //    webCam.Play();
-        //    if (Application.platform == RuntimePlatform.Android)
-        //    {
-        //        UXRGesCamera.Instance.GesInit(width, height);
-        //    }
-        //}
-
-        //private Texture2D TextureToTexture2D(Texture texture)
-        //{
-        //    if (sourceTex2D == null)
-        //    {
-        //        sourceTex2D = new Texture2D(texture.width, texture.height, TextureFormat.BGRA32, false);
-        //        sourceTex2D.filterMode = FilterMode.Point;
-        //    }
-
-        //    if (renderTexture == null)
-        //    {
-        //        renderTexture = new RenderTexture(texture.width, texture.height, 24);
-        //        renderTexture.filterMode = FilterMode.Point;
-        //        renderTexture.antiAliasing = 8;
-        //    }
-
-        //    RenderTexture.active = renderTexture;
-        //    Graphics.Blit(texture, renderTexture);
-        //    sourceTex2D.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0);
-        //    sourceTex2D.Apply();
-        //    RenderTexture.active = null;
-        //    return sourceTex2D;
-        //}
-
-        //private void ToggleGes(string args)
-        //{
-        //    Debug.Log("ToggleGes args:" + args);
-        //    if (args == "true")
-        //    {
-        //        Debug.Log("开启手势...");
-        //        UXRGesCamera.Instance.GesStart();
-        //        startRecord = true;
-        //        handGestureObject.GetComponent<RKGesSampleInteraction>().openGes = true;
-        //    }
-        //    else if (args == "false")
-        //    {
-        //        Debug.Log("关闭手势...");
-        //        UXRGesCamera.Instance.GesStop();
-        //        startRecord = false;
-        //        handGestureObject.GetComponent<RKGesSampleInteraction>().openGes = false;
-        //    }
-        //}
-
-        public void onClickButton()
-        {
-            //webCam.Stop(); // To Test
-            //videoObject.SetActive(false);
-            //startRecord = false;
-
-            Debug.Log("2");
-            CapturePhoto();
-            Debug.Log("1");
-        }
+        return _meshPhysicsLayer;
     }
+
+    private Vector2 GetCenter(Prediction p)
+    {
+        return new Vector2((float)(p.boundingBox.left + (0.5 * p.boundingBox.width)),
+            (float)(p.boundingBox.top + (0.5 * p.boundingBox.height)));
+    }
+
+    //private void InitVideo(int width, int height, int fps)
+    //{
+    //    Debug.Log("Init Video");
+    //    WebCamDevice[] devices = WebCamTexture.devices;
+    //    if (devices.Length < 1)
+    //    {
+    //        Debug.Log("设备上未找到摄像头,请检查设备");
+    //        return;
+    //    }
+    //    deviceName = devices[0].name;
+    //    webCam = new WebCamTexture(deviceName, width, height, fps);//设置宽、高和帧率   
+    //    RawImage preview = videoPreview;
+    //    preview.texture = webCam;
+    //    preview.color = Color.white;
+    //    webCam.Play();
+    //    if (Application.platform == RuntimePlatform.Android)
+    //    {
+    //        UXRGesCamera.Instance.GesInit(width, height);
+    //    }
+    //}
+
+    //private Texture2D TextureToTexture2D(Texture texture)
+    //{
+    //    if (sourceTex2D == null)
+    //    {
+    //        sourceTex2D = new Texture2D(texture.width, texture.height, TextureFormat.BGRA32, false);
+    //        sourceTex2D.filterMode = FilterMode.Point;
+    //    }
+
+    //    if (renderTexture == null)
+    //    {
+    //        renderTexture = new RenderTexture(texture.width, texture.height, 24);
+    //        renderTexture.filterMode = FilterMode.Point;
+    //        renderTexture.antiAliasing = 8;
+    //    }
+
+    //    RenderTexture.active = renderTexture;
+    //    Graphics.Blit(texture, renderTexture);
+    //    sourceTex2D.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0);
+    //    sourceTex2D.Apply();
+    //    RenderTexture.active = null;
+    //    return sourceTex2D;
+    //}
+
+    //private void ToggleGes(string args)
+    //{
+    //    Debug.Log("ToggleGes args:" + args);
+    //    if (args == "true")
+    //    {
+    //        Debug.Log("开启手势...");
+    //        UXRGesCamera.Instance.GesStart();
+    //        startRecord = true;
+    //        handGestureObject.GetComponent<RKGesSampleInteraction>().openGes = true;
+    //    }
+    //    else if (args == "false")
+    //    {
+    //        Debug.Log("关闭手势...");
+    //        UXRGesCamera.Instance.GesStop();
+    //        startRecord = false;
+    //        handGestureObject.GetComponent<RKGesSampleInteraction>().openGes = false;
+    //    }
+    //}
+
+    public void onClickButton()
+    {
+        //webCam.Stop(); // To Test
+        //videoObject.SetActive(false);
+        //startRecord = false;
+
+        Debug.Log("2");
+        CapturePhoto();
+        Debug.Log("1");
+    }
+}
 

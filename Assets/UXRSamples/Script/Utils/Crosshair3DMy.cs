@@ -85,10 +85,12 @@ public class Crosshair3DMy : MonoBehaviour
         }
 
         // Checks for screen touches.
-        if (Google.XR.Cardboard.Api.IsTriggerPressed)
-        {
-            if (gazedAtObject)
-                gazedAtObject.SendMessage("OnPointerClick", SendMessageOptions.DontRequireReceiver);
+        if (string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) {
+            if (Google.XR.Cardboard.Api.IsTriggerPressed)
+            {
+                if (gazedAtObject)
+                    gazedAtObject.SendMessage("OnPointerClick", SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 }

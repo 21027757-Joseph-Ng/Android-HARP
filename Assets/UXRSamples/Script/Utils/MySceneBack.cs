@@ -8,7 +8,7 @@ public class MySceneBack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Application.platform == RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android && string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown"))
         {
             Google.XR.Cardboard.Api.UpdateScreenParams();
         }

@@ -28,6 +28,14 @@ public class VoiceMainMenu : MonoBehaviour
         clickedDocument = buttonCollections.transform.Find("Document Viewer").GetComponent<ClickedGoogleDrive>();
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
+
+        //Debug.Log("Device model: " + SystemInfo.deviceModel);
+        //Debug.Log(SystemInfo.deviceModel.Equals("Rokid RG-crown"));
+        //Debug.Log(string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown"));
+        //Debug.Log("Device name: " + SystemInfo.deviceName);
+        //Debug.Log("Device Type" + SystemInfo.deviceType);
+        //Debug.Log("OS: " + SystemInfo.operatingSystem);
+        //Debug.Log("Graphic Device ID: " + SystemInfo.graphicsDeviceID);
     }
 
     private void Awake()

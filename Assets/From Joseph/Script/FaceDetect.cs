@@ -107,13 +107,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             // Create the object hosting the faces to identify
             Debug.Log("IdentifyFaces");
-            
+
             FacesToIdentify_RootObject facesToIdentify = new FacesToIdentify_RootObject();
             facesToIdentify.faceIds = new List<string>();
             facesToIdentify.personGroupId = personGroupId;
 
             Debug.Log("before loop");
-            
+
             foreach (string facesId in listOfFacesIdToIdentify)
             {
                 facesToIdentify.faceIds.Add(facesId);
@@ -139,7 +139,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 string url = $"{baseEndpoint}identify";
 
                 url = "https://harpface.cognitiveservices.azure.com/face/v1.0/identify";//joseph hard code
-                
+
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
                 // serialize your json using newtonsoft json serializer then add it to the StringContent
                 var content = new StringContent(facesToIdentifyJson, Encoding.UTF8, "application/json");
@@ -149,10 +149,19 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 Debug.Log("{\"returnedFaces\":" + resultContent + "}");
                 Candidate_RootObject candidate_RootObject = JsonUtility.FromJson<Candidate_RootObject>("{\"returnedFaces\":" + resultContent + "}");
 
-                // For each face to identify that ahs been submitted, display its candidate
-                foreach (Returnedface candidateRO in candidate_RootObject.returnedFaces)
+
+                try
                 {
-                    await GetPerson(candidateRO.candidates[0].personId);
+                    // For each face to identify that ahs been submitted, display its candidate
+                    foreach (Returnedface candidateRO in candidate_RootObject.returnedFaces)
+                    {
+                        await GetPerson(candidateRO.candidates[0].personId);
+                    }
+                }
+
+                catch (NullReferenceException e)
+                {
+                    noPerson();
                 }
             }
 
@@ -164,7 +173,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public async Task GetPerson(string personId)
         {
             string getGroupEndpoint = $"{baseEndpoint}persongroups/{personGroupId}/persons/{personId}?";
-            
+
             getGroupEndpoint = "https://harpface.cognitiveservices.azure.com/face/v1.0/persongroups/123456/persons/" + personId + "?";//joseph hard code
 
             using (var client = new HttpClient())
@@ -175,13 +184,20 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
                 Debug.Log($"Get Person - jsonResponse: {resultContent}");
                 IdentifiedPerson_RootObject identifiedPerson_RootObject = JsonUtility.FromJson<IdentifiedPerson_RootObject>(resultContent);
-                Debug.Log(identifiedPerson_RootObject.name);
+                Debug.Log("identified: " + identifiedPerson_RootObject.name);
+                Debug.Log("identified: " + identifiedPerson_RootObject);
                 ClickedDetect clickedDetect = gameObject.GetComponent<ClickedDetect>();
                 Debug.Log("Testing log");
                 clickedDetect.CreateBoundingBox(identifiedPerson_RootObject);
             }
         }
 
+        //joseph code
+        public void noPerson()
+        {
+            ClickedDetect clickedDetect = gameObject.GetComponent<ClickedDetect>();
+            clickedDetect.noPerson();
+        }
 
     }
 

@@ -16,13 +16,13 @@ public class MainScene : MonoBehaviour
             Application.Quit();
         }
 
-        if (Application.platform == RuntimePlatform.Android && (Input.GetKeyDown((KeyCode.DownArrow)))) //yidao dpad down
+        if (Application.platform == RuntimePlatform.Android && (Input.GetKeyDown((KeyCode.DownArrow))) && string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) //yidao dpad down
         {
             Debug.Log("-UXR- MainScene Input DownArrow");
             Google.XR.Cardboard.Api.Recenter();
         }
 
-        if (Application.platform == RuntimePlatform.Android && Input.GetKeyDown(KeyCode.JoystickButton0)) //yidao dpad center
+        if (Application.platform == RuntimePlatform.Android && Input.GetKeyDown(KeyCode.JoystickButton0) && string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) //yidao dpad center
         {
             Debug.Log("-UXR- MainScene Input KEYCODE_DPAD_CENTER");
             Google.XR.Cardboard.Api.Recenter();
