@@ -15,7 +15,7 @@
 // limitations under the License.
 // </copyright>
 //-----------------------------------------------------------------------
-
+#if UNITY_ANDROID
 using System.Collections;
 using UnityEngine;
 
@@ -53,6 +53,7 @@ public class CameraPointer2 : MonoBehaviour
             _gazedAtObject = null;
         }
 
+        
         // Checks for screen touches.
         if (string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown"))
         {
@@ -61,6 +62,7 @@ public class CameraPointer2 : MonoBehaviour
                 _gazedAtObject?.SendMessage("OnPointerClick");
             }
         }
+        
 
         if (Application.platform == RuntimePlatform.Android && (Input.GetKeyDown((KeyCode.DownArrow))) && string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) //yidao dpad down
         {
@@ -73,5 +75,7 @@ public class CameraPointer2 : MonoBehaviour
             Debug.Log("-UXR- MainScene Input KEYCODE_DPAD_CENTER");
             Google.XR.Cardboard.Api.Recenter();
         }
+        
     }
 }
+#endif

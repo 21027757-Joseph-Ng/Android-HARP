@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Microsoft.MixedReality.OpenXR.BasicSample;
+using Microsoft.MixedReality.Toolkit.Examples.Demos;
+
 
 public class ScrollCheckList2 : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class ScrollCheckList2 : MonoBehaviour
 
     private GameObject buttonCollection;
     private GameObject todolist;
+    private GameObject scrollPaginationButtons;
 
     private List<GameObject> handMenuList;
     private List<GameObject> checklistList;
@@ -121,6 +124,9 @@ public class ScrollCheckList2 : MonoBehaviour
             toDoListList.Add(todolist.transform.GetChild(1).GetChild(3).GetChild(1).gameObject);//save
             toDoListList.Add(null);
 
+            //add scrollPaginationButtons
+            scrollPaginationButtons = todolist.transform.GetChild(1).GetChild(1).gameObject;
+
             todolist.SetActive(true);
             //todolistManager.transform.GetChild(index - 2).gameObject.SetActive(true);
             index = 1;
@@ -177,6 +183,11 @@ public class ScrollCheckList2 : MonoBehaviour
             Highlight(index);
             UnHighlight(index - 1);
             Debug.Log("index: " + index);
+            //(toDoListList.Count - 4 - (index - 1)) != 2)
+            if (index > 3 && !((toDoListList.Count - 4 - (index - 1)) <= 1))  //0,1, second last, last, index 2 first item   bug: 9 item, item 6 to 7 didnt go down
+            {//scroll by 2 to go 3(when go to 3 from 2), scroll by 2 to go 4, scroll by 2 to go 5, scroll by 2 to go 6, scroll by 2 to go 7, no more scrolling down
+                scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(2);
+            }
         }
     }
 
@@ -207,6 +218,11 @@ public class ScrollCheckList2 : MonoBehaviour
             Highlight(index);
             UnHighlight(index + 1);
             Debug.Log("index: " + index);
+            
+            if (index < (toDoListList.Count - 4) && index != 3)//scroll by -2 from 8 to 7      example: 13, -4= 9 8th item
+            {
+                scrollPaginationButtons.GetComponent<ScrollablePagination>().ScrollByTier(-2);
+            }
         }
     }
 

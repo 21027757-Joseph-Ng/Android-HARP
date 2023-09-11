@@ -17455,6 +17455,7 @@ GameObject:
   - component: {fileID: 381806469657132481}
   - component: {fileID: 3896337419796545451}
   - component: {fileID: 8724819114020190641}
+  - component: {fileID: 8724819114020190642}
   m_Layer: 0
   m_Name: ButtonCollection
   m_TagString: Untagged
@@ -17469,7 +17470,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8724819114020190640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4a8046c838068845833116f79ebb0cc, type: 3}
   m_Name: 
@@ -17484,6 +17485,19 @@ MonoBehaviour:
   indoor: {fileID: 2460533}
   dynamic: {fileID: 8118008111554742180}
   setting: {fileID: 1510772357}
+--- !u!114 &8724819114020190642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8724819114020190640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5004bdcd4383b944180c111deb90f987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonCollection: {fileID: 8724819114020190640}
 --- !u!4 &8999525035768445449
 Transform:
   m_ObjectHideFlags: 0

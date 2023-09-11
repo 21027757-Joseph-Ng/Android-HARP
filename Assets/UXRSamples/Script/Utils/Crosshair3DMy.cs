@@ -1,3 +1,4 @@
+#if UNITY_ANDROID
 using System.Net.Sockets;
 using System.Collections;
 using UnityEngine;
@@ -84,6 +85,7 @@ public class Crosshair3DMy : MonoBehaviour
             }
         }
 
+        
         // Checks for screen touches.
         if (string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) {
             if (Google.XR.Cardboard.Api.IsTriggerPressed)
@@ -92,5 +94,7 @@ public class Crosshair3DMy : MonoBehaviour
                     gazedAtObject.SendMessage("OnPointerClick", SendMessageOptions.DontRequireReceiver);
             }
         }
+        
     }
 }
+#endif

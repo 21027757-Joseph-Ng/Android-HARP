@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+#if UNITY_ANDROID
 public class MainScene : MonoBehaviour
 {
     private void Awake()
@@ -16,6 +17,7 @@ public class MainScene : MonoBehaviour
             Application.Quit();
         }
 
+        
         if (Application.platform == RuntimePlatform.Android && (Input.GetKeyDown((KeyCode.DownArrow))) && string.Equals(SystemInfo.deviceModel.ToString(), "Rokid RG-crown")) //yidao dpad down
         {
             Debug.Log("-UXR- MainScene Input DownArrow");
@@ -27,7 +29,7 @@ public class MainScene : MonoBehaviour
             Debug.Log("-UXR- MainScene Input KEYCODE_DPAD_CENTER");
             Google.XR.Cardboard.Api.Recenter();
         }
-
+        
     }
 
 
@@ -81,3 +83,4 @@ public class MainScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 }
+#endif

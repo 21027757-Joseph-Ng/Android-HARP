@@ -59,6 +59,7 @@
     <Compile Include="Assets\UXRSDK\Scripts\UXR3DofController.cs" />
     <Compile Include="Assets\CheckList\Scripts\ChecklistObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollCheckList2.cs" />
     <Compile Include="Assets\FaceDetector\FaceTracking.cs" />
     <Compile Include="Assets\HandGestures.cs" />
     <Compile Include="Assets\UXRSamples\Script\Utils\CameraPointer2.cs" />
@@ -174,7 +175,7 @@
     <Compile Include="Assets\UXRSamples\Script\Scenes\MainScene\ColliderBoxEvent.cs" />
     <Compile Include="Assets\From Joseph\Script\VoiceObject.cs" />
     <Compile Include="Assets\From Joseph\Script\ClickedDetect.cs" />
-    <Compile Include="Assets\From Joseph\Script\ScrollCheckList2.cs" />
+    <Compile Include="Assets\From Joseph\Script\ScrollMainMenu2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
