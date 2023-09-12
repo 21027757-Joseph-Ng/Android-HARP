@@ -10,6 +10,9 @@ EditorBuildSettings:
     guid: 2f58dd188fbfa944fa0d4d500009c499
   - enabled: 1
     path: Assets/MainMenu.unity
+    guid: 6e8dd466b2c04b2439125c6e25c73945
+  - enabled: 0
+    path: Assets/MainMenu - OG.unity
     guid: 6ccbb0f34b23e70439f8656fffacf464
   - enabled: 1
     path: Assets/UXRSamples/Scenes/uxr00-MainScene.unity

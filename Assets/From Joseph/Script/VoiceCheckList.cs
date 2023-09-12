@@ -189,7 +189,7 @@ public class VoiceCheckList : MonoBehaviour
             save = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(3).GetChild(1).gameObject;//update save game object
             scrollPaginationButtons = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(1).gameObject;//update scroll button
         }
-        else if (string.Equals("thermatic", msg) && !todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is opened, close it
+        else if (string.Equals("thermatic", msg) && todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is opened, close it
         {
             Debug.Log("TodoList close");
             gridObjectCollection = todoListMenu.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject;

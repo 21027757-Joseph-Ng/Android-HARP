@@ -39,7 +39,7 @@ public class ClickedDocument : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
             {
             //wait for a few second
-            OpenFolder();
+            StartCoroutine(OpenFolder());
         }
         //}
     }
@@ -58,8 +58,9 @@ public class ClickedDocument : MonoBehaviour
 
     private const string folderPath = "/sdcard/Documents";
 
-    public void OpenFolder()
+    public IEnumerator OpenFolder()
     {
+        yield return new WaitForSeconds(1f);
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject currentActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
 
@@ -80,5 +81,10 @@ public class ClickedDocument : MonoBehaviour
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
 
         currentActivity.Call("startActivityForResult", intent, REQUEST_CODE_SCAN_INFO);
+    }
+
+    public void Activate()
+    {
+        StartCoroutine(OpenFolder());
     }
 }

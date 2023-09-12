@@ -42978,7 +42978,7 @@ IL_0087:
 		// SceneManager.LoadScene("MainMenu");
 		IL2CPP_RUNTIME_CLASS_INIT(SceneManager_tEC9D10ECC0377F8AE5AEEB5A789FFD24364440FA_il2cpp_TypeInfo_var);
 		SceneManager_LoadScene_m7DAF30213E99396ECBDB1BD40CC34CCF36902092(_stringLiteral000E6F488C4BFBAD929A9ED558662797D830E719, /*hidden argument*/NULL);
-		goto IL_0311;
+		goto IL_030e;
 	}
 
 IL_00d0:
@@ -43006,7 +43006,7 @@ IL_00d0:
 		L_32 = GameObject_get_activeSelf_m4865097C24FB29F3C31F5C30619AF242297F23EE(L_31, /*hidden argument*/NULL);
 		NullCheck(L_30);
 		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_30, (bool)((((int32_t)L_32) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
-		goto IL_0311;
+		goto IL_030e;
 	}
 
 IL_010d:
@@ -43188,18 +43188,18 @@ IL_01e0:
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_74;
 		L_74 = Component_get_gameObject_m55DC35B149AFB9157582755383BA954655FE0C5B(L_73, /*hidden argument*/NULL);
 		__this->set_scrollPaginationButtons_6(L_74);
-		goto IL_0311;
+		goto IL_030e;
 	}
 
 IL_0263:
 	{
-		// else if (string.Equals("thermatic", msg) && !todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is opened, close it
+		// else if (string.Equals("thermatic", msg) && todoListMenu.transform.GetChild(0).gameObject.activeSelf)//the todolist is opened, close it
 		String_t* L_75 = ___msg0;
 		bool L_76;
 		L_76 = String_Equals_mAFC6038D294F341434D9D67D7EADC7F97C556C9B(_stringLiteralC4E9C0075C3E94056B8245E0550E41207FED5B04, L_75, /*hidden argument*/NULL);
 		if (!L_76)
 		{
-			goto IL_0290;
+			goto IL_028d;
 		}
 	}
 	{
@@ -43216,22 +43216,22 @@ IL_0263:
 		NullCheck(L_80);
 		bool L_81;
 		L_81 = GameObject_get_activeSelf_m4865097C24FB29F3C31F5C30619AF242297F23EE(L_80, /*hidden argument*/NULL);
-		G_B20_0 = ((((int32_t)L_81) == ((int32_t)0))? 1 : 0);
-		goto IL_0291;
+		G_B20_0 = ((int32_t)(L_81));
+		goto IL_028e;
 	}
 
-IL_0290:
+IL_028d:
 	{
 		G_B20_0 = 0;
 	}
 
-IL_0291:
+IL_028e:
 	{
 		V_9 = (bool)G_B20_0;
 		bool L_82 = V_9;
 		if (!L_82)
 		{
-			goto IL_0311;
+			goto IL_030e;
 		}
 	}
 	{
@@ -43285,7 +43285,7 @@ IL_0291:
 		VoiceCheckList_RegisterCheckListScroll_m761ABF13F855B87E6769A311E7C1822DF18C3767(__this, /*hidden argument*/NULL);
 	}
 
-IL_0311:
+IL_030e:
 	{
 		// Debug.Log(1);
 		int32_t L_95 = 1;
@@ -43294,10 +43294,10 @@ IL_0311:
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_96, /*hidden argument*/NULL);
 		// for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
 		V_10 = 1;
-		goto IL_0599;
+		goto IL_0596;
 	}
 
-IL_0325:
+IL_0322:
 	{
 		// Debug.Log("TodoList child text: " + checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_97 = __this->get_checklist_9();
@@ -43338,7 +43338,7 @@ IL_0325:
 		L_110 = GameObject_get_activeSelf_m4865097C24FB29F3C31F5C30619AF242297F23EE(L_109, /*hidden argument*/NULL);
 		if (!L_110)
 		{
-			goto IL_03aa;
+			goto IL_03a7;
 		}
 	}
 	{
@@ -43364,27 +43364,27 @@ IL_0325:
 		L_119 = String_Equals_mAFC6038D294F341434D9D67D7EADC7F97C556C9B(L_117, L_118, /*hidden argument*/NULL);
 		if (!L_119)
 		{
-			goto IL_03aa;
+			goto IL_03a7;
 		}
 	}
 	{
 		int32_t L_120 = V_0;
 		G_B27_0 = ((((int32_t)L_120) == ((int32_t)1))? 1 : 0);
-		goto IL_03ab;
+		goto IL_03a8;
 	}
 
-IL_03aa:
+IL_03a7:
 	{
 		G_B27_0 = 0;
 	}
 
-IL_03ab:
+IL_03a8:
 	{
 		V_11 = (bool)G_B27_0;
 		bool L_121 = V_11;
 		if (!L_121)
 		{
-			goto IL_0439;
+			goto IL_0436;
 		}
 	}
 	{
@@ -43438,10 +43438,10 @@ IL_03ab:
 		VoiceCheckList_UnregisterSave_m0F51C746B13AFD893E545DB0A751E25A5C7BEB91(__this, /*hidden argument*/NULL);
 		// RegisterCheckListScroll();
 		VoiceCheckList_RegisterCheckListScroll_m761ABF13F855B87E6769A311E7C1822DF18C3767(__this, /*hidden argument*/NULL);
-		goto IL_0592;
+		goto IL_058f;
 	}
 
-IL_0439:
+IL_0436:
 	{
 		// else if (!todoListMenu.transform.GetChild(i - 1).gameObject.activeSelf && string.Equals(checklist.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshPro>().text, msg) && count == 0)//the todolist is not active, open it
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_136 = __this->get_todoListMenu_10();
@@ -43460,7 +43460,7 @@ IL_0439:
 		L_141 = GameObject_get_activeSelf_m4865097C24FB29F3C31F5C30619AF242297F23EE(L_140, /*hidden argument*/NULL);
 		if (L_141)
 		{
-			goto IL_048a;
+			goto IL_0487;
 		}
 	}
 	{
@@ -43486,27 +43486,27 @@ IL_0439:
 		L_150 = String_Equals_mAFC6038D294F341434D9D67D7EADC7F97C556C9B(L_148, L_149, /*hidden argument*/NULL);
 		if (!L_150)
 		{
-			goto IL_048a;
+			goto IL_0487;
 		}
 	}
 	{
 		int32_t L_151 = V_0;
 		G_B33_0 = ((((int32_t)L_151) == ((int32_t)0))? 1 : 0);
-		goto IL_048b;
+		goto IL_0488;
 	}
 
-IL_048a:
+IL_0487:
 	{
 		G_B33_0 = 0;
 	}
 
-IL_048b:
+IL_0488:
 	{
 		V_12 = (bool)G_B33_0;
 		bool L_152 = V_12;
 		if (!L_152)
 		{
-			goto IL_0592;
+			goto IL_058f;
 		}
 	}
 	{
@@ -43547,16 +43547,16 @@ IL_048b:
 		{
 			G_B36_0 = L_163;
 			G_B36_1 = _stringLiteral3E77B3986874A68352431AE113DB8EB2412C4BD1;
-			goto IL_04e9;
+			goto IL_04e6;
 		}
 	}
 	{
 		G_B37_0 = ((String_t*)(NULL));
 		G_B37_1 = G_B35_1;
-		goto IL_04ee;
+		goto IL_04eb;
 	}
 
-IL_04e9:
+IL_04e6:
 	{
 		NullCheck(G_B36_0);
 		String_t* L_164;
@@ -43565,7 +43565,7 @@ IL_04e9:
 		G_B37_1 = G_B36_1;
 	}
 
-IL_04ee:
+IL_04eb:
 	{
 		String_t* L_165;
 		L_165 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(G_B37_1, G_B37_0, /*hidden argument*/NULL);
@@ -43636,14 +43636,14 @@ IL_04ee:
 		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_185, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_0592:
+IL_058f:
 	{
 		// for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
 		int32_t L_186 = V_10;
 		V_10 = ((int32_t)il2cpp_codegen_add((int32_t)L_186, (int32_t)1));
 	}
 
-IL_0599:
+IL_0596:
 	{
 		// for (int i = 1; i < todoListMenu.transform.childCount + 1; i++)//check if any todolist is open
 		int32_t L_187 = V_10;
@@ -43658,7 +43658,7 @@ IL_0599:
 		bool L_191 = V_13;
 		if (L_191)
 		{
-			goto IL_0325;
+			goto IL_0322;
 		}
 	}
 	{
@@ -43678,7 +43678,7 @@ IL_0599:
 		int32_t L_198 = V_0;
 		if ((!(((uint32_t)L_198) == ((uint32_t)1))))
 		{
-			goto IL_05e5;
+			goto IL_05e2;
 		}
 	}
 	{
@@ -43686,30 +43686,30 @@ IL_0599:
 		bool L_200;
 		L_200 = Int32_TryParse_m748B8DB1D0C9D25C3D1812D7887411C4AFC1DDC2(L_199, (int32_t*)(&V_2), /*hidden argument*/NULL);
 		G_B43_0 = ((int32_t)(L_200));
-		goto IL_05e6;
+		goto IL_05e3;
 	}
 
-IL_05e5:
+IL_05e2:
 	{
 		G_B43_0 = 0;
 	}
 
-IL_05e6:
+IL_05e3:
 	{
 		V_14 = (bool)G_B43_0;
 		bool L_201 = V_14;
 		if (!L_201)
 		{
-			goto IL_0731;
+			goto IL_072e;
 		}
 	}
 	{
 		// for (int i = 0; i < CountList(); i++)
 		V_15 = 0;
-		goto IL_071d;
+		goto IL_071a;
 	}
 
-IL_05f8:
+IL_05f5:
 	{
 		// Debug.Log("toggle index: " + gridObjectCollection.transform.GetChild(i).GetComponent<ChecklistObject>().index);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_202 = __this->get_gridObjectCollection_7();
@@ -43769,7 +43769,7 @@ IL_05f8:
 		bool L_225 = V_17;
 		if (!L_225)
 		{
-			goto IL_0703;
+			goto IL_0700;
 		}
 	}
 	{
@@ -43827,10 +43827,10 @@ IL_05f8:
 		L_245 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(L_244, _stringLiteral8DC5EAB7154DB2139EB27806B7925CE449EE02ED, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_245, /*hidden argument*/NULL);
-		goto IL_0716;
+		goto IL_0713;
 	}
 
-IL_0703:
+IL_0700:
 	{
 		// Debug.Log("Such item do not exist: " + msg);
 		String_t* L_246 = ___msg0;
@@ -43840,14 +43840,14 @@ IL_0703:
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_247, /*hidden argument*/NULL);
 	}
 
-IL_0716:
+IL_0713:
 	{
 		// for (int i = 0; i < CountList(); i++)
 		int32_t L_248 = V_15;
 		V_15 = ((int32_t)il2cpp_codegen_add((int32_t)L_248, (int32_t)1));
 	}
 
-IL_071d:
+IL_071a:
 	{
 		// for (int i = 0; i < CountList(); i++)
 		int32_t L_249 = V_15;
@@ -43857,13 +43857,13 @@ IL_071d:
 		bool L_251 = V_18;
 		if (L_251)
 		{
-			goto IL_05f8;
+			goto IL_05f5;
 		}
 	}
 	{
 	}
 
-IL_0731:
+IL_072e:
 	{
 		// Debug.Log(3);
 		int32_t L_252 = 3;
@@ -43876,7 +43876,7 @@ IL_0731:
 		bool L_255 = V_19;
 		if (!L_255)
 		{
-			goto IL_0778;
+			goto IL_0775;
 		}
 	}
 	{
@@ -43888,7 +43888,7 @@ IL_0731:
 		bool L_258 = V_20;
 		if (!L_258)
 		{
-			goto IL_0777;
+			goto IL_0774;
 		}
 	}
 	{
@@ -43904,11 +43904,11 @@ IL_0731:
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral84E4B3F75FBFB513503B3D352A290D02E452738A, /*hidden argument*/NULL);
 	}
 
-IL_0777:
+IL_0774:
 	{
 	}
 
-IL_0778:
+IL_0775:
 	{
 		// Debug.Log(4);
 		int32_t L_261 = 4;
@@ -43923,7 +43923,7 @@ IL_0778:
 		bool L_265 = V_21;
 		if (!L_265)
 		{
-			goto IL_07b6;
+			goto IL_07b3;
 		}
 	}
 	{
@@ -43937,10 +43937,10 @@ IL_0778:
 		// Debug.Log("upchecklist");
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral18473958EEF56EF30C9F8DAFB4743B6AEC811810, /*hidden argument*/NULL);
-		goto IL_07e6;
+		goto IL_07e3;
 	}
 
-IL_07b6:
+IL_07b3:
 	{
 		// else if (string.Equals("downchecklist", msg))
 		String_t* L_268 = ___msg0;
@@ -43950,7 +43950,7 @@ IL_07b6:
 		bool L_270 = V_22;
 		if (!L_270)
 		{
-			goto IL_07e6;
+			goto IL_07e3;
 		}
 	}
 	{
@@ -43966,7 +43966,7 @@ IL_07b6:
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral1740E979D3AA27269E8E310C8E7C783B769465DF, /*hidden argument*/NULL);
 	}
 
-IL_07e6:
+IL_07e3:
 	{
 		// Debug.Log(5);
 		int32_t L_273 = 5;
@@ -43979,7 +43979,7 @@ IL_07e6:
 		bool L_276 = V_23;
 		if (!L_276)
 		{
-			goto IL_0860;
+			goto IL_085d;
 		}
 	}
 	{
@@ -43991,7 +43991,7 @@ IL_07e6:
 		bool L_279 = V_24;
 		if (!L_279)
 		{
-			goto IL_082f;
+			goto IL_082c;
 		}
 	}
 	{
@@ -44005,10 +44005,10 @@ IL_07e6:
 		// Debug.Log("uptodo");
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral5A6C6AC82E2365109E8C68B798AFED26518F3E2C, /*hidden argument*/NULL);
-		goto IL_085f;
+		goto IL_085c;
 	}
 
-IL_082f:
+IL_082c:
 	{
 		// else if (string.Equals("downtodo", msg))
 		String_t* L_282 = ___msg0;
@@ -44018,7 +44018,7 @@ IL_082f:
 		bool L_284 = V_25;
 		if (!L_284)
 		{
-			goto IL_085f;
+			goto IL_085c;
 		}
 	}
 	{
@@ -44034,11 +44034,11 @@ IL_082f:
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral83F2163F8370A0C58976E3864B64FF66CE28185E, /*hidden argument*/NULL);
 	}
 
-IL_085f:
+IL_085c:
 	{
 	}
 
-IL_0860:
+IL_085d:
 	{
 		// }
 		return;
