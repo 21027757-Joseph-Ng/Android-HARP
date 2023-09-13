@@ -103,8 +103,8 @@ public class VoiceCheckList : MonoBehaviour
 
     private void RegisterTodoScroll()
     {
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "up", true, true, true, this.gameObject.name, "ColorRes", "uptodo");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "down", true, true, true, this.gameObject.name, "ColorRes", "downtodo");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate up", true, true, true, this.gameObject.name, "ColorRes", "uptodo");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate down", true, true, true, this.gameObject.name, "ColorRes", "downtodo");
     }
 
     private void UnregisterTodoScroll()
@@ -115,8 +115,8 @@ public class VoiceCheckList : MonoBehaviour
 
     private void RegisterCheckListScroll()
     {
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "up", true, true, true, this.gameObject.name, "ColorRes", "upchecklist");
-        VoiceCommandLogic.Instance.AddInstrucEntity(1, "down", true, true, true, this.gameObject.name, "ColorRes", "downchecklist");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate up", true, true, true, this.gameObject.name, "ColorRes", "upchecklist");
+        VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate down", true, true, true, this.gameObject.name, "ColorRes", "downchecklist");
     }
 
     private void UnregisterCheckListScroll()

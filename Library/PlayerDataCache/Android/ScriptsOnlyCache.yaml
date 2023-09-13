@@ -1,7 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - UXREnvFix
     Assembly-CSharp.dll:
     - CameraPreviewAndSendGesData
     - ClickedCheckList
@@ -237,6 +235,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -404,17 +404,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9396}
     - Class: 114
-      Script: {instanceID: 26072}
+      Script: {instanceID: 31634}
     - Class: 114
-      Script: {instanceID: 26608}
+      Script: {instanceID: 31642}
     - Class: 114
-      Script: {instanceID: 26612}
+      Script: {instanceID: 31648}
     - Class: 114
-      Script: {instanceID: 30310}
+      Script: {instanceID: 31650}
     - Class: 114
-      Script: {instanceID: 36692}
+      Script: {instanceID: 31808}
     - Class: 114
-      Script: {instanceID: 36694}
+      Script: {instanceID: 33500}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -505,45 +505,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8496}
     - Class: 114
-      Script: {instanceID: 46986}
+      Script: {instanceID: 61306}
     - Class: 114
-      Script: {instanceID: 46988}
+      Script: {instanceID: 61308}
     - Class: 114
-      Script: {instanceID: 46990}
+      Script: {instanceID: 61310}
     - Class: 114
-      Script: {instanceID: 46992}
+      Script: {instanceID: 61312}
     - Class: 114
-      Script: {instanceID: 46996}
+      Script: {instanceID: 61316}
     - Class: 114
-      Script: {instanceID: 47002}
+      Script: {instanceID: 61322}
     - Class: 114
-      Script: {instanceID: 47008}
+      Script: {instanceID: 61328}
     - Class: 114
-      Script: {instanceID: 47010}
+      Script: {instanceID: 61330}
     - Class: 114
-      Script: {instanceID: 47012}
+      Script: {instanceID: 61332}
     - Class: 114
-      Script: {instanceID: 47014}
+      Script: {instanceID: 61334}
     - Class: 114
-      Script: {instanceID: 47018}
+      Script: {instanceID: 61338}
     - Class: 114
-      Script: {instanceID: 47020}
+      Script: {instanceID: 61340}
     - Class: 114
-      Script: {instanceID: 47022}
+      Script: {instanceID: 61342}
     - Class: 114
-      Script: {instanceID: 47024}
+      Script: {instanceID: 61344}
     - Class: 114
-      Script: {instanceID: 47026}
+      Script: {instanceID: 61346}
     - Class: 114
-      Script: {instanceID: 47028}
+      Script: {instanceID: 61348}
     - Class: 114
-      Script: {instanceID: 47030}
+      Script: {instanceID: 61350}
     - Class: 114
-      Script: {instanceID: 47032}
+      Script: {instanceID: 61352}
     - Class: 114
-      Script: {instanceID: 47036}
+      Script: {instanceID: 61356}
     - Class: 114
-      Script: {instanceID: 47582}
+      Script: {instanceID: 61902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -592,6 +592,8 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -704,6 +706,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -804,6 +808,8 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -924,11 +930,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9396}
     - Class: 114
-      Script: {instanceID: 26072}
+      Script: {instanceID: 31634}
     - Class: 114
-      Script: {instanceID: 26608}
+      Script: {instanceID: 31642}
     - Class: 114
-      Script: {instanceID: 26612}
+      Script: {instanceID: 31650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -985,7 +991,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9192}
     - Class: 114
-      Script: {instanceID: 47628}
+      Script: {instanceID: 61950}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1020,8 +1026,6 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1325,8 +1329,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1417,11 +1419,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7756}
     - Class: 114
-      Script: {instanceID: 26034}
+      Script: {instanceID: 31650}
     - Class: 114
-      Script: {instanceID: 26040}
+      Script: {instanceID: 41902}
     - Class: 114
-      Script: {instanceID: 26072}
+      Script: {instanceID: 41908}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1559,7 +1561,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8572}
     - Class: 114
-      Script: {instanceID: 26072}
+      Script: {instanceID: 31650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -5055,4 +5057,4 @@ ScriptsOnlyBuild:
   - Assets/DLAB.unity
   - Assets/From Joseph/Shared/Shared.unity
   - Assets/ObjectDetect/ObjectDetect.unity
-  playerPath: C:/Users/21027757/Downloads/Android-HARP/Build/test11-11.apk
+  playerPath: C:/Users/21027757/Downloads/Android-HARP/Build/test11-13.apk

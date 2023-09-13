@@ -3203,6 +3203,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8233201677051473000, guid: 5d7b2e7a9c16c463ea24fce40270c3e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.99
+      objectReference: {fileID: 0}
     - target: {fileID: 8233201677653826234, guid: 5d7b2e7a9c16c463ea24fce40270c3e9, type: 3}
       propertyPath: openGes
       value: 1
@@ -9611,7 +9615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: V0.2.0
+  m_text: V0.2.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
   m_sharedMaterial: {fileID: 21202819797275496, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}

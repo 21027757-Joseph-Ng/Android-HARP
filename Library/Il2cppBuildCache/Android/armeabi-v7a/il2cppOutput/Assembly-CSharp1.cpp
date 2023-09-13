@@ -782,13 +782,13 @@ IL2CPP_EXTERN_C String_t* _stringLiteral0E2F31C3017AD0B9039EE8895E1EEA934BABC1C3
 IL2CPP_EXTERN_C String_t* _stringLiteral0E3E7A9A92462225FFAF23BB1259E1BCFCEDDD0F;
 IL2CPP_EXTERN_C String_t* _stringLiteral0E5ACD8F8AECEE8F67E336B26C4EAF8C98F34BD0;
 IL2CPP_EXTERN_C String_t* _stringLiteral1191F807D9B108FA5A3B755DC2C13FF0A1773BE4;
+IL2CPP_EXTERN_C String_t* _stringLiteral11DE3F3BD9BF52487822FB61579B455CC7643ECE;
 IL2CPP_EXTERN_C String_t* _stringLiteral15196F05B117690F3E12E56AA0C43803EA0D2A46;
 IL2CPP_EXTERN_C String_t* _stringLiteral15FBDB3BDCACEC2D47E94B62F44EB088D70C03D3;
 IL2CPP_EXTERN_C String_t* _stringLiteral172B6551F33E73D8C0923BAB03D690AD61B85975;
 IL2CPP_EXTERN_C String_t* _stringLiteral1740E979D3AA27269E8E310C8E7C783B769465DF;
 IL2CPP_EXTERN_C String_t* _stringLiteral18473958EEF56EF30C9F8DAFB4743B6AEC811810;
 IL2CPP_EXTERN_C String_t* _stringLiteral1948514BA4DF2FFEAB5199CD2746DFDE0CC82E36;
-IL2CPP_EXTERN_C String_t* _stringLiteral1B22F82E513C1BB368DFDBFDFB5FB8C1178CA305;
 IL2CPP_EXTERN_C String_t* _stringLiteral1B37354C482CA01CD77BCCA9C131AED31D4B7151;
 IL2CPP_EXTERN_C String_t* _stringLiteral1BF20F795791AC67CCC9E2B5B855E3A9D68CDDD6;
 IL2CPP_EXTERN_C String_t* _stringLiteral1C7A9E8795DAC93A625C23D6E9F2BC7332ABF459;
@@ -834,7 +834,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral50639CAD49418C7B223CC529395C0E2A3892501C
 IL2CPP_EXTERN_C String_t* _stringLiteral520AC683617E189443111771E5B625C82CF79A2D;
 IL2CPP_EXTERN_C String_t* _stringLiteral522483A526E5CADA33B98964DC5B5408DCF59F4D;
 IL2CPP_EXTERN_C String_t* _stringLiteral5225EE496AAB278285733EDA00B46385A27F58CC;
-IL2CPP_EXTERN_C String_t* _stringLiteral5379C25D8F9979AD371949D2F3201B2D326743A4;
 IL2CPP_EXTERN_C String_t* _stringLiteral53AC8A54279654A7347C6F9B5DE00A8CA8C733AC;
 IL2CPP_EXTERN_C String_t* _stringLiteral56787AED1F1F0138A45A8CC69C9C83A4A24041AC;
 IL2CPP_EXTERN_C String_t* _stringLiteral5688CC04887B371491C469FD743EF5C91354C532;
@@ -842,6 +841,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral598081DBD06E8B1A338629AF7933F9131C6D33AB
 IL2CPP_EXTERN_C String_t* _stringLiteral5A3D6FC5AC03F283E51A1E494164E2F6D006FCE2;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A6C6AC82E2365109E8C68B798AFED26518F3E2C;
 IL2CPP_EXTERN_C String_t* _stringLiteral5AF0A3B422FF5A2DCD88B5FF2B775B8F01F54FF6;
+IL2CPP_EXTERN_C String_t* _stringLiteral5DD44C841A03B968946398EA4685D0F4308F473C;
 IL2CPP_EXTERN_C String_t* _stringLiteral64D987E19848CC89070B86830D2097D46D903D54;
 IL2CPP_EXTERN_C String_t* _stringLiteral69CE07E5C7ADCC833DA3E659BC9009F6C3C1346A;
 IL2CPP_EXTERN_C String_t* _stringLiteral6C3B90D0C27E620F9CB6F4530546C591AB0C5E12;
@@ -42619,15 +42619,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterTodoScroll_m3742C
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1B22F82E513C1BB368DFDBFDFB5FB8C1178CA305);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral11DE3F3BD9BF52487822FB61579B455CC7643ECE);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5379C25D8F9979AD371949D2F3201B2D326743A4);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5A6C6AC82E2365109E8C68B798AFED26518F3E2C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5DD44C841A03B968946398EA4685D0F4308F473C);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral83F2163F8370A0C58976E3864B64FF66CE28185E);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "up", true, true, true, this.gameObject.name, "ColorRes", "uptodo");
+		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate up", true, true, true, this.gameObject.name, "ColorRes", "uptodo");
 		VoiceCommandLogic_t9D43A954D6568382FD3A3D76FB29790A8982D3D3 * L_0;
 		L_0 = MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222(/*hidden argument*/MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_1;
@@ -42636,8 +42636,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterTodoScroll_m3742C
 		String_t* L_2;
 		L_2 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_1, /*hidden argument*/NULL);
 		NullCheck(L_0);
-		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_0, 1, _stringLiteral1B22F82E513C1BB368DFDBFDFB5FB8C1178CA305, (bool)1, (bool)1, (bool)1, L_2, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral5A6C6AC82E2365109E8C68B798AFED26518F3E2C, /*hidden argument*/NULL);
-		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "down", true, true, true, this.gameObject.name, "ColorRes", "downtodo");
+		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_0, 1, _stringLiteral5DD44C841A03B968946398EA4685D0F4308F473C, (bool)1, (bool)1, (bool)1, L_2, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral5A6C6AC82E2365109E8C68B798AFED26518F3E2C, /*hidden argument*/NULL);
+		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate down", true, true, true, this.gameObject.name, "ColorRes", "downtodo");
 		VoiceCommandLogic_t9D43A954D6568382FD3A3D76FB29790A8982D3D3 * L_3;
 		L_3 = MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222(/*hidden argument*/MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_4;
@@ -42646,7 +42646,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterTodoScroll_m3742C
 		String_t* L_5;
 		L_5 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_4, /*hidden argument*/NULL);
 		NullCheck(L_3);
-		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_3, 1, _stringLiteral5379C25D8F9979AD371949D2F3201B2D326743A4, (bool)1, (bool)1, (bool)1, L_5, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral83F2163F8370A0C58976E3864B64FF66CE28185E, /*hidden argument*/NULL);
+		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_3, 1, _stringLiteral11DE3F3BD9BF52487822FB61579B455CC7643ECE, (bool)1, (bool)1, (bool)1, L_5, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral83F2163F8370A0C58976E3864B64FF66CE28185E, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -42684,15 +42684,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterCheckListScroll_m
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral11DE3F3BD9BF52487822FB61579B455CC7643ECE);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1740E979D3AA27269E8E310C8E7C783B769465DF);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral18473958EEF56EF30C9F8DAFB4743B6AEC811810);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1B22F82E513C1BB368DFDBFDFB5FB8C1178CA305);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5379C25D8F9979AD371949D2F3201B2D326743A4);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5DD44C841A03B968946398EA4685D0F4308F473C);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "up", true, true, true, this.gameObject.name, "ColorRes", "upchecklist");
+		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate up", true, true, true, this.gameObject.name, "ColorRes", "upchecklist");
 		VoiceCommandLogic_t9D43A954D6568382FD3A3D76FB29790A8982D3D3 * L_0;
 		L_0 = MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222(/*hidden argument*/MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_1;
@@ -42701,8 +42701,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterCheckListScroll_m
 		String_t* L_2;
 		L_2 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_1, /*hidden argument*/NULL);
 		NullCheck(L_0);
-		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_0, 1, _stringLiteral1B22F82E513C1BB368DFDBFDFB5FB8C1178CA305, (bool)1, (bool)1, (bool)1, L_2, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral18473958EEF56EF30C9F8DAFB4743B6AEC811810, /*hidden argument*/NULL);
-		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "down", true, true, true, this.gameObject.name, "ColorRes", "downchecklist");
+		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_0, 1, _stringLiteral5DD44C841A03B968946398EA4685D0F4308F473C, (bool)1, (bool)1, (bool)1, L_2, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral18473958EEF56EF30C9F8DAFB4743B6AEC811810, /*hidden argument*/NULL);
+		// VoiceCommandLogic.Instance.AddInstrucEntity(1, "navigate down", true, true, true, this.gameObject.name, "ColorRes", "downchecklist");
 		VoiceCommandLogic_t9D43A954D6568382FD3A3D76FB29790A8982D3D3 * L_3;
 		L_3 = MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222(/*hidden argument*/MonoSingleton_1_get_Instance_m8387A1AF16E42EA998224A894FF52B1C43AB7222_RuntimeMethod_var);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_4;
@@ -42711,7 +42711,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceCheckList_RegisterCheckListScroll_m
 		String_t* L_5;
 		L_5 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_4, /*hidden argument*/NULL);
 		NullCheck(L_3);
-		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_3, 1, _stringLiteral5379C25D8F9979AD371949D2F3201B2D326743A4, (bool)1, (bool)1, (bool)1, L_5, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral1740E979D3AA27269E8E310C8E7C783B769465DF, /*hidden argument*/NULL);
+		VoiceCommandLogic_AddInstrucEntity_m8AB735EC1B48D2BAF3B4EA53974ABBC3E5CED1BC(L_3, 1, _stringLiteral11DE3F3BD9BF52487822FB61579B455CC7643ECE, (bool)1, (bool)1, (bool)1, L_5, _stringLiteral3A04E227E5142112999D63FBEA94C8EE71DADA45, _stringLiteral1740E979D3AA27269E8E310C8E7C783B769465DF, /*hidden argument*/NULL);
 		// }
 		return;
 	}
